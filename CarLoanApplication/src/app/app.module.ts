@@ -17,6 +17,17 @@ import { HomeComponent } from './dashboard/home/home.component';
 import { MenuComponent } from './templates/menu/menu.component';
 import { EnquiryComponent } from './dashboard/enquiry/enquiry.component';
 import { LoanComponent } from './dashboard/loan/loan.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MainTemplateComponent } from './templates/main-template/main-template.component';
+
+
+import {MatMenuModule} from '@angular/material/menu';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';  
+import {MatCardModule} from '@angular/material/card';
+import {MatDividerModule} from '@angular/material/divider';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -32,11 +43,23 @@ import { LoanComponent } from './dashboard/loan/loan.component';
     HomeComponent,
     MenuComponent,
     EnquiryComponent,
-    LoanComponent
+    LoanComponent,
+    MainTemplateComponent,
+
+   
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule,
+    MatDividerModule,
+     FlexLayoutModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

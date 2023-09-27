@@ -1,0 +1,50 @@
+
+/* .example-spacer {
+    flex: 2 2 auto;
+  } */
+
+  .nav-item{
+    text-shadow: white;
+  }
+  .mat-toolbar {
+    /* display: flex; */
+    justify-content: space-between;
+    margin-right: 40px;
+
+    color: #ffffff; /* Text color */
+    /* background: linear-gradient(to bottom , rgb(48, 17, 51), rgb(5, 6, 43)) */
+  }
+
+    
+  
+  .spacer {
+    flex-grow: 4;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    
+  }
+  
+  .logo img {
+    
+    height: 40px; /* Adjust the height as needed */
+    margin-right: 10px; /* Add some spacing between logo and buttons */
+    object-fit: cover;
+   
+  }
+  
+
+    /* .Header{
+      position: fixed;
+      width: 100%;
+      z-index: 100; 
+
+    } */
+
+    .toolbar-with-shadow {
+      box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.2); /* Adjust values as needed */
+    }
+
+

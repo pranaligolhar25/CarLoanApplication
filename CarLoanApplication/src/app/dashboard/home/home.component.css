@@ -1,0 +1,115 @@
+
+.enquiry {
+    position: absolute;
+    margin-top: 220px;
+    margin-left: 375px;
+    height: 45px;
+    width: 200px;
+        
+      background-color:#de0202;
+      color: #ffffff;
+  }
+  
+  .enquiry:hover {
+      background-color: #7d0101; /* Change the background color on hover */
+    }
+  
+  .line
+  {
+      margin-top: 20px;
+      margin-bottom: 50px;
+     text-align: center;
+     text-decoration: underline;
+     text-underline-offset: 10px;
+  }
+  
+  
+  
+    
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 16px;
+    }
+    
+  
+    
+    .background {
+      /* Set the background image URL */
+      /* background-image: url('src\assets\Images\image6.jpeg'); */
+      
+      /* Set background properties */
+      background-size: cover; /* Adjust as needed (cover, contain, etc.) */
+      background-position: center center; /* Adjust as needed */
+      background-repeat: no-repeat;
+      
+      /* Set dimensions */
+      width: 100%;
+      height: 100%; /* Adjust as needed */
+    }
+  
+    .boxcard{
+    
+      height: 30px;
+      background-color: #8f6230;
+      
+    }
+    
+    .course-card {
+      width: 220px;
+      height: 380px;
+      margin: 1rem;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    }
+    .Welcome{
+      color: rgb(255, 255, 255);
+      position: absolute;
+      margin-top: 100px;
+      margin-left: 250px;
+      
+      text-shadow: 5px -5px 10px rgb(0, 0, 0);
+      align-tracks: center;
+      font-size: 70px;
+    }
+  
+    body {
+      background-color: #10316eb0;
+    }
+  
+    .text{
+      text-align: center;
+    }
+  
+  
+    
+  .scroll
+  {
+      background-color: #8f6230;
+      color: white;
+      height: 30px;
+  }
+    
+  .tx{
+      position: absolute;
+     margin-top: 3px;
+  }
+   
+  .group2
+  {
+      margin-top: 40px;
+      font-size: 20px;
+      background-color: rgb(239, 244, 245);
+      height: 400px;
+     
+  }
+  .text2
+  {
+      height: 300px;
+      text-indent: 70px
+  }
+  
+  
+  
+    
+  
+    
+  
