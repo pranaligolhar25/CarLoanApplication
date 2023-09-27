@@ -1,1 +1,41 @@
-<p>login works!</p>
+
+<button mat-icon-button style="float:right;background-color: red;"  matDialogClose >
+    
+    <mat-icon style="background-color: red;">close</mat-icon>
+</button>
+
+<mat-dialog-content>
+
+    <div class="text-center">
+       
+        <h1 class="mt-1 mb-3 pb-1" style="background-color:rgba(red);">LOGIN </h1>
+      </div>
+
+    <form  [formGroup]="loginform" (ngSubmit)="savedata()">
+    
+       
+        <div class="form-outline mb-4">
+          
+          <input type="text" id="form2Example1" class="form-control"  formControlName="username"/>
+          
+          <label class="form-label" for="form2Example1" >UserName</label>
+          <mat-icon matPrefix>account_box</mat-icon>
+        </div>
+
+       
+        <div class="form-outline mb-4">
+          <input type="password" id="form2Example2" class="form-control" formControlName="password" />
+          <label class="form-label" for="form2Example2">Password</label>
+          <mat-icon matPrefix> vpn_key</mat-icon>
+        </div>
+      
+        
+      
+         <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+      
+        
+      </form>
+</mat-dialog-content>
+
+
+

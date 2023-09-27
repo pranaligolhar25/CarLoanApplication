@@ -1,1 +1,46 @@
-<p>enquiry works!</p>
+<!-- <button mat-icon-button style="float:right;background-color: red;"  matDialogClose >
+    
+    <mat-icon style="background-color: red;">close</mat-icon>
+</button> -->
+
+<div mat-dialog-title class="title">
+    <h1 >Enquiry Form</h1>
+</div>
+<div mat-dialog-content class="content mb-4">
+    <div class="name mb-2">
+    <mat-form-field appearance="outline">
+        <mat-icon matPrefix>account_circle</mat-icon>
+        <mat-label>Customer Name</mat-label>
+        <input matInput type="text" placeholder="enter  name">
+    </mat-form-field>
+      </div>
+
+      
+              <div class="name mb-2">
+                <mat-form-field appearance="outline">
+                    <mat-icon matPrefix>email</mat-icon>
+                    <mat-label>Customer Email</mat-label>
+                    <input matInput type="email" placeholder="enter  email">
+                </mat-form-field>
+                  </div>
+                  <div class="name mb-2">
+                    <mat-form-field appearance="outline">
+                        <mat-icon matPrefix>account_box</mat-icon>
+                        <mat-label>Customer Aadhar</mat-label>
+                        <input matInput type="number" placeholder="enter  Aadhar No">
+                    </mat-form-field>
+                      </div>
+                      <div class="name mb-2">
+                        <mat-form-field appearance="outline">
+                            <mat-icon matPrefix>phone</mat-icon>
+                            <mat-label>Customer MobNo</mat-label>
+                            <input matInput type="number" placeholder="enter  mobile no">
+                        </mat-form-field>
+                          </div>
+</div>
+
+<div mat-dialog-actions class="button mt-2">
+    <button mat-raised-button color="primary">Register</button>
+</div>
+
+

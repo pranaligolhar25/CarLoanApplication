@@ -19,6 +19,9 @@ import { EnquiryComponent } from './dashboard/enquiry/enquiry.component';
 import { LoanComponent } from './dashboard/loan/loan.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainTemplateComponent } from './templates/main-template/main-template.component';
+import {ReactiveFormsModule  } from '@angular/forms';
+import {MatDialogModule  } from '@angular/material/dialog';
+import {MatInputModule  } from '@angular/material/input';
 
 
 import {MatMenuModule} from '@angular/material/menu';
@@ -58,7 +61,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatButtonModule,
     MatCardModule,
     MatDividerModule,
-     FlexLayoutModule
+     FlexLayoutModule,
+     MatInputModule,MatDialogModule,
+     ReactiveFormsModule
 
   ],
   providers: [],
