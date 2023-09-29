@@ -1,1 +1,36 @@
-<p>module-header works!</p>
+<!-- 
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid"> 
+
+        <h1> {{getUserType | usertypePipe}}</h1>
+   
+        <div class="navbar-nav">
+            <button type="button" class="btn btn-success" routerLink="/">LOGIN OUT</button>
+        </div>
+    </div> -->
+
+    
+<mat-toolbar class="mat-toolbar  toolbar-with-shadow " color="primary"   > 
+    
+    <div  fxLayout="row" fxLayoutAlign="space-between center">
+        <button mat-icon-button  routerLink="" style="margin-bottom: 6px; ">
+            <mat-icon style="font-size: 25px;">account_circle</mat-icon>
+            </button>
+  
+    <h2> {{getUserType | usertypePipe}}</h2>
+    </div>
+
+    <div style=" margin-right: 20px; margin-left: auto;" fxLayout="row" fxLayoutAlign="space-between center">
+        <div class="nav_div">
+            <button mat-icon-button  routerLink="" style="margin-bottom: 8px; ">
+                <mat-icon style="font-size: 25px;">home</mat-icon>
+              </button>
+        </div>
+        
+    <mat-dialog-actions>
+     <button mat-raised-button color="warn" routerLink="/">LOGIN OUT</button>
+ </mat-dialog-actions>
+   
+    </div>
+
+</mat-toolbar>

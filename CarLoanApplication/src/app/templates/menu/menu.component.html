@@ -1,1 +1,7 @@
-<p>menu works!</p>
+
+<div  fxLayout="column" fxLayoutAlign="space-between start" >
+    <div class="menu" *ngFor="let menu of menus[0][type]">
+        <!-- <button [routerLink]="type+'/'+menu.path" >{{menu.label}}</button> -->
+        <button mat-stroked-button class="sidebutton" color="primary" [routerLink]="type+'/'+menu.path">{{menu.label}}</button>
+     </div>
+</div>

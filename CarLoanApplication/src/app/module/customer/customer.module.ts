@@ -6,6 +6,7 @@ import { OverviewComponent } from './overview/overview.component';
 import { HowToApplyComponent } from './how-to-apply/how-to-apply.component';
 import { ApplyLoanComponent } from './apply-loan/apply-loan.component';
 import { FeaturesBenifitsComponent } from './features-benifits/features-benifits.component';
+import { TrackStatusComponent } from './track-status/track-status.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { FeaturesBenifitsComponent } from './features-benifits/features-benifits
     OverviewComponent,
     HowToApplyComponent,
     ApplyLoanComponent,
-    FeaturesBenifitsComponent
+    FeaturesBenifitsComponent,
+    TrackStatusComponent
   ],
   imports: [
     CommonModule,

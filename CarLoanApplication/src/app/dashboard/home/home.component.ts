@@ -12,9 +12,6 @@ export class HomeComponent {
 
   constructor(private dialog:MatDialog){}
   opencustomer(){
-
     this.dialog.open(EnquiryComponent);
   }
   }
-
-

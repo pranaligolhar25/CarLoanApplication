@@ -1,0 +1,11 @@
+.sidebutton
+{
+    width: 272px;
+    height: 60px;
+    text-align: right;
+}
+.sidebutton:hover
+{
+    color: white;
+    background-color: rgb(2, 84, 172);
+}

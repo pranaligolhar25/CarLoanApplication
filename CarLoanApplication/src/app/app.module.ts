@@ -30,7 +30,14 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';  
 import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ApplicationDashboardComponent } from './dashboard/application-dashboard/application-dashboard.component';
+import { UsertypePipePipe } from './pipes/usertype-pipe.pipe';
+
+
 
 @NgModule({
   declarations: [
@@ -48,7 +55,17 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     EnquiryComponent,
     LoanComponent,
     MainTemplateComponent,
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
    
+=======
+    ApplicationDashboardComponent,
+    UsertypePipePipe,
+>>>>>>> Stashed changes
+=======
+    ApplicationDashboardComponent,
+    UsertypePipePipe,
+>>>>>>> Stashed changes
 
    
   ],
@@ -56,6 +73,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+
     MatMenuModule,
     MatToolbarModule,
     MatIconModule,
@@ -63,9 +81,21 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatCardModule,
     MatDividerModule,
      FlexLayoutModule,
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
      MatInputModule,MatDialogModule,
      ReactiveFormsModule,
      FormsModule
+=======
+=======
+>>>>>>> Stashed changes
+     MatInputModule,
+     MatDialogModule,
+     MatSidenavModule,
+     MatListModule,
+
+     ReactiveFormsModule
+>>>>>>> Stashed changes
 
   ],
   providers: [],

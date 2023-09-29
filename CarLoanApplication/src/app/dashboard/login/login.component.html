@@ -7,13 +7,11 @@
 <mat-dialog-content>
 
     <div class="text-center">
-       
         <h1 class="mt-1 mb-3 pb-1" style="background-color:rgba(red);">LOGIN </h1>
       </div>
 
     <form  [formGroup]="loginform" (ngSubmit)="savedata()">
-    
-       
+
         <div class="form-outline mb-4">
           
           <input type="text" id="form2Example1" class="form-control"  formControlName="username"/>
@@ -31,7 +29,7 @@
       
         
       
-         <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+         <button type="submit"matDialogClose  class="btn btn-primary btn-block mb-4">Sign in</button>
       
         
       </form>
