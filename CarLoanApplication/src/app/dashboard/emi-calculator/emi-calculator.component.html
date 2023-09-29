@@ -1,1 +1,102 @@
-<p>emi-calculator works!</p>
+<div class="container">
+    <div class="content">
+        
+            <h1>Car Loan</h1>
+        <div>
+            <p>With the advancement of latest technologies, life is changing faster and so do the car models. New facelift versions and new variants are launching quite frequently making it difficult to resist the temptation for upgrading to the car of latest technology.
+            </p><p>These new car models complimented with various financing schemes offered by ICICI Bank Car Loans make it easier to upgrade to the car of your choice with <a href="/personal-banking/loans/car-loan/car-loan-interest-rate">attractive rate of interest</a>.</p>
+        </div>
+        <button>BOOK YOUR DREAM CAR</button>
+    </div >
+    
+            <div class="calculator">
+              <div class="outside">
+                <h3 >Car Loan EMI Calculator</h3>
+                <div class="upside">
+                    <div class="upside-label">
+                        <label>Loan Amount</label>
+                        <div >
+                            <div class="upside-label" >
+                                <button class="textbox"><span>{{ loanAmount | currency:'INR' }}</span></button>
+                            </div>
+                            <div class="upside-range">
+                              <input type="range" id="loanAmount" [(ngModel)]="loanAmount" min="10000" max="1000000">
+                            </div>
+                            <div class="upside-label">
+                                <ul>
+                                    <li><span>₹ 10,000</span></li>
+                                    <li><span>₹ 10,00,000</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                     
+                    </div>
+                    <div  class="upside-label">
+                        <label>Tenure (months)</label>
+                        <div >
+                            <div class="upside-label">
+                              <button class="textbox"><span>{{ loanTenure  }}</span></button>
+                            </div>
+                            <div class="upside-range">
+                              <input type="range" id="loanTenure" [(ngModel)]="loanTenure" min="12" max="120">
+                            </div>
+                            <div class="upside-label">
+                                <ul>
+                                    <li><span>12 M</span></li>
+                                    <li><span>120 M</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="upside-label">
+                        <label>Interest Rate (In %)</label>
+                        <div >
+                            <div class="upside-label">
+                                <div >
+                                  <button class="textbox"><span>{{ interestRate }}%</span></button>
+                                </div>
+                            </div>
+                            <div class="upside-range">
+                              <input type="range" id="interestRate" [(ngModel)]="interestRate" min="1" max="18">
+                            </div>
+                            <div class="upside-label">
+                                <ul>
+                                    <li><span>1% PA</span></li>
+                                    <li><span>18% PA</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                
+                        <div class="downside">
+                          <div class="middle">
+                            <div class="downside-label" >
+                                <label>EMI Amount</label>
+                                <div >
+                                  <p class="p">{{ calculateEMI() | currency:'INR' }}</p>
+                                </div>
+                            </div>
+                            <div class="downside-label" >
+                                <label>Interest Payable</label>
+                                <div class="text-in-line">
+                                    <p class="p">{{ calculateInterest() | currency:'INR' }}</p>
+                                </div>
+                            </div>
+                          </div>
+                    
+                    <div class="downside-label" >
+                        <div class="buttons">
+                            <a href="">
+                               <button> Apply now</button>
+                            </a>
+                           
+                        </div>
+                    </div>
+         </div>
+    </div>
+    </div>
+    <div>
+    </div>
+    </div>
