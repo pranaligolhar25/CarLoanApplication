@@ -33,6 +33,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 
+
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ApplicationDashboardComponent } from './dashboard/application-dashboard/application-dashboard.component';
 import { UsertypePipePipe } from './pipes/usertype-pipe.pipe';
@@ -55,17 +56,9 @@ import { UsertypePipePipe } from './pipes/usertype-pipe.pipe';
     EnquiryComponent,
     LoanComponent,
     MainTemplateComponent,
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-   
-=======
     ApplicationDashboardComponent,
-    UsertypePipePipe,
->>>>>>> Stashed changes
-=======
-    ApplicationDashboardComponent,
-    UsertypePipePipe,
->>>>>>> Stashed changes
+    UsertypePipePipe
+
 
    
   ],
@@ -81,21 +74,19 @@ import { UsertypePipePipe } from './pipes/usertype-pipe.pipe';
     MatCardModule,
     MatDividerModule,
      FlexLayoutModule,
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-     MatInputModule,MatDialogModule,
-     ReactiveFormsModule,
-     FormsModule
-=======
-=======
->>>>>>> Stashed changes
+
      MatInputModule,
      MatDialogModule,
      MatSidenavModule,
      MatListModule,
+     ReactiveFormsModule,
+
+     FormsModule,
+
+ 
 
      ReactiveFormsModule
->>>>>>> Stashed changes
+
 
   ],
   providers: [],
