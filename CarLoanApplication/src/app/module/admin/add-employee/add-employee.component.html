@@ -1,1 +1,282 @@
-<p>add-employee works!</p>
+
+<mat-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      
+        <ng-template matStepLabel>Fill out your name</ng-template>
+
+            <div class="body">
+            <div class="container">
+                <form [formGroup]="firstFormGroup">
+        
+                    <div class="form first">
+                        <div class="details personal">
+                            <span class="title">personal Detail</span>
+                            <div class="fields">
+                                <div class="input-field">
+                                    <label>Full Name</label>
+                                    <input type="text" placeholder="Enter Your Name" required>
+                                </div>
+            
+                                <div class="input-field">
+                                    <label>Date Of Birth</label>
+                                    <input type="date" placeholder="Enter Your Birth Date" required>
+                                </div>
+            
+                                <div class="input-field">
+                                    <label>Email</label>
+                                    <input type="email" placeholder="Enter Your Email" required>
+                                </div>
+            
+                                <div class="input-field">
+                                    <label>Mobile Number</label>
+                                    <input type="number" placeholder="Enter Your Mobile NO" required>
+                                </div>
+            
+                                <div class="input-field">
+                                    <label>Gender</label>
+                                    <select name="status" >
+                                        <option value="volvo">Male</option>
+                                        <option value="saab">Female</option>
+                                        <option value="saab">Other</option>
+                    
+                                      </select>
+                                </div>
+            
+                                <div class="input-field">
+                                    <label>Role</label>
+                                    <select name="status" >
+                                        <option value="volvo">relationship executive</option>
+                                        <option value="saab">operation executive</option>
+                                        <option value="saab">Credit manager</option>
+                                        <option value="saab">Account head</option>
+                    
+                                      </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                       
+                        <div class="details personal">
+                            <span class="title">Doccument Detail</span>
+                            <div class="fields">
+                                <div class="input-field">
+                                    <label>Profile Photo</label>
+                                    <input type="file"  required>
+                                </div>
+            
+                                <div class="input-field">
+                                    <label>Adhar Card</label>
+                                    <input type="file"  required>
+                                </div>
+            
+                                <div class="input-field">
+                                    <label>Pan Card</label>
+                                    <input type="file"  required>
+                                </div>
+            
+                                <div class="input-field">
+                                    <label>Signature</label>
+                                    <input type="file"  required>
+                                </div>
+
+                            </div>
+            
+                            
+                        </div>
+
+
+
+                        <div>
+                            <button mat-button matStepperNext>Next</button>
+                          </div>
+                    </div>
+                    
+                    </form>
+            </div>
+        </div>
+
+    </mat-step>
+
+    <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
+      
+        <div class="body">
+            <div class="container">
+                <form [formGroup]="firstFormGroup">
+        
+                    <div class="form first">
+                        <div class="details personal">
+                            <span class="title">Permanat Address</span>
+                            <div class="fields">
+                                <div class="input-field">
+                                    <label>State</label>
+                                    <input type="text" placeholder="Enter State" required>
+                                </div>
+            
+                                <div class="input-field">
+                                    <label>District</label>
+                                    <input type="text" placeholder="Enter District" required>
+                                </div>
+            
+                                <div class="input-field">
+                                    <label>City Name</label>
+                                    <input type="text" placeholder="Enter City" required>
+                                </div>
+            
+                                <div class="input-field">
+                                    <label>Area Name</label>
+                                    <input type="text" placeholder="Enter Area Name" required>
+                                </div>
+            
+                                <div class="input-field">
+                                    <label>Land Mark</label>
+                                    <input type="text" placeholder="Enter Land Mark" required>
+                                </div>
+            
+                                <div class="input-field">
+                                    <label>Pin code</label>
+                                    <input type="text" placeholder="Enter Pin Code" required>
+                                </div>
+                            </div>
+                            <label>same as</label><input type="checkbox">
+                            
+                        </div>
+            
+                        <div class="details ID">
+                            <span class="title">Local Address</span>
+                            <div class="fields">
+                                <div class="input-field">
+                                    <label>State</label>
+                                    <input type="text" placeholder="Enter State" required>
+                                </div>
+            
+                                <div class="input-field">
+                                    <label>District</label>
+                                    <input type="text" placeholder="Enter District" required>
+                                </div>
+            
+                                <div class="input-field">
+                                    <label>City Name</label>
+                                    <input type="text" placeholder="Enter City" required>
+                                </div>
+            
+                                <div class="input-field">
+                                    <label>Area Name</label>
+                                    <input type="text" placeholder="Enter Area Name" required>
+                                </div>
+            
+                                <div class="input-field">
+                                    <label>Land Mark</label>
+                                    <input type="text" placeholder="Enter Land" required>
+                                </div>
+            
+                                <div class="input-field">
+                                    <label>Pin code</label>
+                                    <input type="text" placeholder="Enter Pin Code" required>
+                                </div>
+                                
+                            </div>
+                             
+                            
+                        </div>
+                        <div class="buttons">
+                        <div class="backBtn">
+                            <button mat-button matStepperPrevious >Back</button>
+                         </div> 
+                         <div class="nextBtn">  
+                            <button mat-button matStepperNext >Next</button>
+                          </div>
+                    </div>
+                </div>
+                    </form>
+            </div>
+        </div>
+
+    </mat-step>
+
+    <mat-step [stepControl]="secondFormGroup" label="Fill out your Bank Detail">
+      
+        <div class="body">
+            <div class="container">
+                <form [formGroup]="firstFormGroup" class="bank">
+        
+                    <div class="form first">
+                        <div class="details personal">
+                            <span class="title">Bank Detail</span>
+                            <div class="fields">
+                                <div class="input-field">
+                                    <label>Account No</label>
+                                    <input type="number" placeholder="Enter Your Account no" required>
+                                </div>
+            
+                                <div class="input-field">
+                                    <label>Bank Name</label>
+                                    <input type="text" placeholder="Enter Bank Name" required>
+                                </div>
+            
+                                <div class="input-field">
+                                    <label>Brach Name</label>
+                                    <input type="text" placeholder="Enter Branch" required>
+                                </div>
+            
+                                <div class="input-field">
+                                    <label>IFSC Number</label>
+                                    <input type="number" placeholder="Enter IFSC no" required>
+                                </div>
+            
+                                <div class="input-field">
+                                    <label>Branch Code</label>
+                                    <input type="number" placeholder="Enter Branch Code" required>
+                                </div>
+            
+                                <div class="input-field">
+                                    <label>CIF Number</label>
+                                    <input type="text" placeholder="Enter CIF No" required>
+                                </div>
+                            </div>
+            
+                            
+                        </div>
+            
+                        
+            
+                      
+                        <div class="buttons">
+                        <div class="backBtn">
+                            <button mat-button matStepperPrevious >Back</button>
+                         </div> 
+                         <div class="nextBtn">  
+                            <button mat-button matStepperNext >Next</button>
+                          </div>
+                    </div>
+                </div>
+                    </form>
+            </div>
+        </div>
+
+
+
+      
+
+
+    </mat-step>
+
+   
+
+
+
+
+    <mat-step>
+       <div class="done">
+      <ng-template matStepLabel>Done</ng-template>
+      <p>You are now done.</p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+        <button mat-button >save</button>
+      </div>
+    </div>
+    </mat-step>
+  </mat-stepper>
+  
+
+

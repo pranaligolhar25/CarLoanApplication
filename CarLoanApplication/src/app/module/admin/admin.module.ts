@@ -8,7 +8,7 @@ import { ViewEmployeeComponent } from './view-employee/view-employee.component';
 
 @NgModule({
   declarations: [
-    AddEmployeeComponent,
+   
     ViewEmployeeComponent
   ],
   imports: [
