@@ -32,14 +32,19 @@ import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
+<<<<<<< Updated upstream
 import { RouterModule, Routes }   from '@angular/router';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTooltipModule } from '@angular/material/tooltip';
+=======
+import {MatStepperModule} from '@angular/material/stepper';
+>>>>>>> Stashed changes
 
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ApplicationDashboardComponent } from './dashboard/application-dashboard/application-dashboard.component';
 import { UsertypePipePipe } from './pipes/usertype-pipe.pipe';
+import { ApplyLoanComponent } from './module/customer/apply-loan/apply-loan.component';
 
 
 
@@ -60,7 +65,8 @@ import { UsertypePipePipe } from './pipes/usertype-pipe.pipe';
     LoanComponent,
     MainTemplateComponent,
     ApplicationDashboardComponent,
-    UsertypePipePipe
+    UsertypePipePipe,
+   
 
 
    
@@ -76,8 +82,10 @@ import { UsertypePipePipe } from './pipes/usertype-pipe.pipe';
     MatButtonModule,
     MatCardModule,
     MatDividerModule,
+    
      FlexLayoutModule,
 
+     MatStepperModule,
      MatInputModule,
      MatDialogModule,
      MatSidenavModule,
@@ -88,11 +96,15 @@ import { UsertypePipePipe } from './pipes/usertype-pipe.pipe';
 
  
 
+<<<<<<< Updated upstream
      ReactiveFormsModule,
      RouterModule,
      MatExpansionModule,
      MatTooltipModule,
      RouterModule.forRoot([])
+=======
+    
+>>>>>>> Stashed changes
 
 
   ],

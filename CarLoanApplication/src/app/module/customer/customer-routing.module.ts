@@ -5,9 +5,10 @@ import { FeaturesBenifitsComponent } from './features-benifits/features-benifits
 import { TrackStatusComponent } from './track-status/track-status.component';
 import { HowToApplyComponent } from './how-to-apply/how-to-apply.component';
 import { OverviewComponent } from './overview/overview.component';
+import { ApplyLoanComponent } from './apply-loan/apply-loan.component';
 
 const routes: Routes = [
-  {path:"apply_loan",component:ApplyForLoanComponent},
+  {path:"apply_loan",component:ApplyLoanComponent},
   {path:"feature_Benifits",component:FeaturesBenifitsComponent},
   {path:"track_status",component:TrackStatusComponent},
   {path:"how_to_apply",component:HowToApplyComponent},

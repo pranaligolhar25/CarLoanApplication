@@ -13,7 +13,7 @@ import { TrackStatusComponent } from './track-status/track-status.component';
   declarations: [
     OverviewComponent,
     HowToApplyComponent,
-    ApplyLoanComponent,
+
     FeaturesBenifitsComponent,
     TrackStatusComponent
   ],
