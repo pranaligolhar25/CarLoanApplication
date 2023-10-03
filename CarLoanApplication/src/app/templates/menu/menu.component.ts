@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { UserOption } from 'src/app/model/user-option';
 
 @Component({
@@ -8,6 +8,7 @@ import { UserOption } from 'src/app/model/user-option';
 })
 export class MenuComponent implements OnInit {
 
+  @Input() getUserType:string;
   menus:Array<any>;
   type:string;
   

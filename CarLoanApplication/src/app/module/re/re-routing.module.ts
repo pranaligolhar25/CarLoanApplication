@@ -7,11 +7,14 @@ import { ApplyForLoanComponent } from './apply-for-loan/apply-for-loan.component
 import { ViewAcceptedLoansComponent } from './view-accepted-loans/view-accepted-loans.component';
 
 const routes: Routes = [
+
+  { path:"",component:ViewEnquiryComponent },
   { path:"addEnquiry",component:AddEnquiryComponent },
   { path:"viewenq",component:ViewEnquiryComponent },
   { path:"sendEnqFeed",component:SendEnquiryFeedbackComponent },
   { path:"applyloan",component:ApplyForLoanComponent },
   { path:"viewloans",component:ViewAcceptedLoansComponent },
+
 ];
 
 @NgModule({

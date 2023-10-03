@@ -1,11 +1,96 @@
-.sidebutton
+ .sidebutton
 {
-    width: 272px;
-    height: 60px;
+    min-width: 249px;
+    max-width: 249px;
+    height: 50px;
+    font-display: flex;
     text-align: right;
+    
 }
 .sidebutton:hover
 {
     color: white;
-    background-color: rgb(2, 84, 172);
+    background-color: #1565C0;
 }
+
+
+ 
+ .toolbar-item-spacer {
+    flex: 1 1 auto;
+}
+ .app-container {
+    height: 90%;
+    margin: 0;
+    
+}  
+.app-sidenav {
+    width: 250px;
+    color: white;
+    background-color: #F5F5F5;
+    
+}
+.app-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    
+    
+} 
+
+.sideheader {
+    
+    padding: 20px;
+    background: #0D47A1;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    
+  }
+  
+  .logo img {
+    
+    height: 40px; 
+    margin-right: 5px; 
+    object-fit: cover;
+   
+  }
+  
+
+  
+    .toolbar-with-shadow {
+      box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.2); /* Adjust values as needed */
+    }
+  
+
+  
+    .valign-center {
+      display: inline-flex;
+      vertical-align: middle;
+      align-items: center;
+    }
+    
+    a {
+      text-decoration: none;
+      /* color: white; */
+    }
+
+    
+    
+    mat-toolbar {
+      position: sticky;
+      position: -webkit-sticky;
+      top: 0px;
+      z-index: 999;
+      margin-right: 40px;
+    
+      height: 60px;
+    
+      color: #ffffff; 
+
+    
+     
+    }
+
+    

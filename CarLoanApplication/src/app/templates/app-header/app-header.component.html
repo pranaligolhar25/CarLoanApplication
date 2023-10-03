@@ -1,34 +1,38 @@
+<mat-toolbar class="mat-elevation-z10" color="primary" fxLayout="row">
+  <div>
+    <a class="valign-center" mat-icon-button [routerLink]="['']">
+      <div style="margin-left:5px;">Loan App</div>
+    </a>
+  </div>
 
 
-<mat-toolbar class="mat-toolbar  toolbar-with-shadow " color="primary"   > 
-      
-    <!-- <span class="logo">
-           <img src="assets\Images\cjclogo.png" alt="CJC Logo">
-         </span>  -->
-   
-   
-       <span ><h2>Loan Application</h2></span>
-      
-      
-   
-   
-         <div  fxLayout="row" fxLayoutAlign="space-between center">
-           <button mat-icon-button  routerLink="" style="margin-bottom: 8px; ">
-               <mat-icon style="font-size: 25px;">home</mat-icon>
-             </button>
-         <button mat-button routerLink="aboutus">AboutUs</button>
-         <button mat-button routerLink="EmiCalculator">EMI Calculator</button>
-         <button mat-button routerLink="Loan">Loan</button>
-         <button mat-button routerLink="faq">FAQ</button>
-         <button mat-button routerLink="register">Registration</button>
-         <!-- <button mat-raised-button color="warn" routerLink="Login">Login</button> -->
-         <mat-dialog-actions>
-          <button mat-raised-button color="warn" (click)="openlogin()">Login</button>
-      </mat-dialog-actions>
-      
-     
-        
-         </div>
-       
-     </mat-toolbar>
-   
+  <div fxFlex fxLayout="row" fxLayoutAlign="flex-end" fxHide.xs class="textsize">
+    <a class="valign-center" [routerLink]="['']">
+      <mat-icon style="font-size: 25px; margin-right: 8px; margin-bottom: 7px;">home</mat-icon>
+    </a>
+    <button mat-button routerLink="aboutus">AboutUs</button>
+    <button mat-button routerLink="EmiCalculator">EMI Calculator</button>
+    <button mat-button routerLink="Loan">Loan</button>
+    <button mat-button routerLink="faq">FAQ</button>
+    <button mat-button routerLink="register">Registration</button>
+  </div>
+
+  <div fxFlex fxLayout="row" fxLayoutAlign="flex-end" fxHide.gt-xs>
+    <a class="valign-center" mat-icon-button [matMenuTriggerFor]="menu" aria-label="additional links">
+      <mat-icon>more_vert</mat-icon>
+    </a>
+    <mat-menu #menu="matMenu" class="menumat">
+      <button mat-menu-item [routerLink]="['']" color="primary">Home</button>
+      <button mat-menu-item [routerLink]="['aboutus']">AboutUs</button>
+      <button mat-menu-item [routerLink]="['EmiCalculator']">EMI Calculator</button>
+      <button mat-menu-item [routerLink]="['Loan']">Loan</button>
+      <button mat-menu-item [routerLink]="['faq']">FAQ</button>
+      <button mat-menu-item [routerLink]="['register']">Registration</button>
+
+    </mat-menu>
+  </div>
+  <mat-dialog-actions>
+    <button mat-raised-button color="warn" (click)="openlogin()">Login</button>
+  </mat-dialog-actions>
+
+</mat-toolbar>

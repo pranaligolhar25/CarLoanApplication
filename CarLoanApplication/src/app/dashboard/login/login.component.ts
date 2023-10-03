@@ -15,7 +15,6 @@ export class LoginComponent implements OnInit{
               private dialog:MatDialog ){}
 
   loginform!: FormGroup;
-
   
   ngOnInit(): void {
     
@@ -29,15 +28,17 @@ export class LoginComponent implements OnInit{
 
   savedata(){
 
-    this.dialog.closeAll;
+    
     let un:String =this.loginform.value.username;
     let ps:String =this.loginform.value.password;
 
+    console.warn(this.loginform.value);
+    
     if(un=="re" && ps=="re@123")
     {
       sessionStorage.setItem('type','re');
       alert("Hello RE")
-    this.router.navigateByUrl('/application/re')
+     this.router.navigateByUrl('/application/re')
       console.log("relogin");
     }
     else if(un=="oe" && ps=="oe@123")

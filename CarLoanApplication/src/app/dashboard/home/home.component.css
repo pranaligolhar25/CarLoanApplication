@@ -2,14 +2,29 @@
 .enquiry {
     position: absolute;
     margin-top: 220px;
-    margin-left: 375px;
-    height: 45px;
+    margin-right: 350px;
+    font-size: 18px;
+    height: 50px;
     width: 200px;
         
       background-color:#de0202;
       color: #ffffff;
   }
   
+  @media screen and (max-width: 1000px) {
+  
+    .enquiry {
+      position: relative;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      margin-right: 0;
+      /* top: 50%; */
+      /* left: 50%; */
+      /* transform: translate(-50%, -50%); */
+      
+    }
+  }
+
   .enquiry:hover {
       background-color: #7d0101; /* Change the background color on hover */
     }
@@ -55,10 +70,12 @@
     }
     
     .course-card {
+      padding-top: 8%;
       width: 220px;
       height: 380px;
       margin: 1rem;
       box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      /* justify-content: center; */
     }
     .Welcome{
       color: rgb(255, 255, 255);
@@ -78,6 +95,16 @@
     .text{
       text-align: center;
     }
+    .cartext{
+      margin-top: 50px;
+      margin-bottom: 50px;
+      text-align: center;
+      font-size: 40px;
+      font-weight: 600;
+      text-decoration: underline;
+  text-underline-offset: 0.2em;
+  line-height: 1.5;
+    }
   
   
     
@@ -90,7 +117,7 @@
     
   .tx{
       position: absolute;
-     margin-top: 3px;
+     
   }
    
   .group2
@@ -104,7 +131,10 @@
   .text2
   {
       height: 300px;
-      text-indent: 70px
+      text-indent: 70px;
+      
+     font-size: 20px;
+     line-height: 1.5;
   }
   
   
