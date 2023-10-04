@@ -1,13 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
 import { ModuleHeaderComponent } from './templates/module-header/module-header.component';
 import { AppFooterComponent } from './templates/app-footer/app-footer.component';
 import { AppHeaderComponent } from './templates/app-header/app-header.component';
-
 import { AboutUsComponent } from './dashboard/about-us/about-us.component';
 import { EmiCalculatorComponent } from './dashboard/emi-calculator/emi-calculator.component';
 import { LoginComponent } from './dashboard/login/login.component';
@@ -36,11 +33,7 @@ import {MatListModule} from '@angular/material/list';
 import { RouterModule, Routes }   from '@angular/router';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTooltipModule } from '@angular/material/tooltip';
-
 import {MatStepperModule} from '@angular/material/stepper';
-
-
-
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ApplicationDashboardComponent } from './dashboard/application-dashboard/application-dashboard.component';
 import { UsertypePipePipe } from './pipes/usertype-pipe.pipe';
@@ -67,10 +60,7 @@ import { HttpClientModule } from '@angular/common/http';
     MainTemplateComponent,
     ApplicationDashboardComponent,
     UsertypePipePipe,
-   
-
-
-   
+      
   ],
   imports: [
     BrowserModule,
@@ -95,20 +85,11 @@ import { HttpClientModule } from '@angular/common/http';
 
      FormsModule,
      HttpClientModule,
-
- 
-
-
      ReactiveFormsModule,
      RouterModule,
      MatExpansionModule,
      MatTooltipModule,
      RouterModule.forRoot([])
-
-    
-
-
-
   ],
   providers: [],
   bootstrap: [AppComponent]
