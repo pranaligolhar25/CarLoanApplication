@@ -1,7 +1,7 @@
 /* Apply basic styles */
 body {
     font-family: Arial;
-    height: 380vh;
+    height: 440vh;
   }
 header {
     background-color: orange;
@@ -124,7 +124,35 @@ section {
     text-align: left;
     padding-left: 8%;
     
-  }     
+  }    
+  .team-container{
+    display: flex;
+    width: 188%;
+  }
+.team-box{
+      background-color:skyblue; /* Set the background color */
+      width: 50%;
+      height: 350px;
+      text-align: left; /* Center-align text horizontally */
+      padding-left: 60px;
+
+
+    }
+    .teammember h1,.gallery h1
+    {
+      padding-left: 650px;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-weight: 900;
+    }
+.team-box img{
+  padding-left: 90px;
+}
+.team-box figcaption{
+  padding-left: 50px;
+  font-size: medium;
+  text-align: center;
+}
+ 
    .slider {
     width: 500px;
     height: 350px;
