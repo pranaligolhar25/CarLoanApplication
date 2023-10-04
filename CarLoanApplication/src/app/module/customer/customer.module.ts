@@ -12,8 +12,6 @@ import { TrackStatusComponent } from './track-status/track-status.component';
 @NgModule({
   declarations: [
     OverviewComponent,
-    HowToApplyComponent,
-
     FeaturesBenifitsComponent,
     TrackStatusComponent
   ],

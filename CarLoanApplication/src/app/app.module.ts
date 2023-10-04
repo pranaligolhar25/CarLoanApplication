@@ -87,7 +87,6 @@ import { HttpClientModule } from '@angular/common/http';
      HttpClientModule,
      ReactiveFormsModule,
      RouterModule,
-     MatExpansionModule,
      MatTooltipModule,
      RouterModule.forRoot([])
   ],
