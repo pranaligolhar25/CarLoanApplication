@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,10 @@ import { Injectable } from '@angular/core';
 })
 export class CustomerService {
 
-  constructor() { }
+  constructor(public http:HttpClient) { }
+
+  postcustomer(customer:FormData){
+
+    return this.http.post("http://localhost:9090/customer/save_customer",customer);
+  }
 }

@@ -81,7 +81,7 @@ border-radius: 8px;
 }
 .container form .fields{
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: space-between;
     flex-wrap: wrap ;
 }

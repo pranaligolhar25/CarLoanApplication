@@ -1,36 +1,186 @@
 
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatStepperModule} from '@angular/material/stepper';
 import Swal from 'sweetalert2';
+import { CustomerService } from 'src/app/Sheard/customer.service';
 
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.css']
 })
-export class RegistrationComponent {
 
-  constructor(private _formBuilder: FormBuilder) {}
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+export class RegistrationComponent implements OnInit {
 
-  firstFormGroup: FormGroup = this._formBuilder.group({firstCtrl: ['']});
-  secondFormGroup: FormGroup = this._formBuilder.group({secondCtrl: ['']});
+  constructor(private _formBuilder: FormBuilder , public cs:CustomerService) {}
+
+  customerAadhar:any;
+  customerPan:any;
+  customerProfilePhoto:any;
+  customerSignature:any;
+  customerSalaryslip:any;
+  customerDrivingLicense:any;
+  customerBankStatement:any;
+  customerCarQuotation:any;
+  customerForm16:any;
+  customerITR:any;
+
+  profileFormGroup: FormGroup = this._formBuilder.group({
+    // firstCtrl: [''],
+    customerName:['',Validators.required],
+    customerEmail:['',Validators.required],
+    customerAadharno:['',Validators.required],
+    customerPanno:['',Validators.required],
+    customerMobileno:['',Validators.required]
+
+  });
+
+  permanentaddform: FormGroup = this._formBuilder.group({
+    // firstCtrl: [''],
+    areaName:['',Validators.required],
+    cityName:['',Validators.required],
+    districtName:['',Validators.required],
+    landMark:['',Validators.required],
+    stateName:['',Validators.required],
+    pinCodeNumber:['',Validators.required]
+
+  });
+
+
+  localaddform: FormGroup = this._formBuilder.group({
+    // secondCtrl: ['']
+
+  areaName:['',Validators.required],
+  cityName:['',Validators.required],
+  districtName:['',Validators.required],
+  landMark:['',Validators.required],
+  stateName:['',Validators.required],
+  pinCodeNumber:['',Validators.required]
+
+});
+
+bankFormGroup: FormGroup = this._formBuilder.group({
+  // secondCtrl: ['']
+  bankAccountNumber:['',Validators.required],
+  bankName:['',Validators.required],
+  branchName:['',Validators.required],
+  ifscNumber:['',Validators.required],
+  cardNumber:['',Validators.required],
+
+});
+
+
 
   isLinear = false;
 
  
- 
+ngOnInit(): void {
+  
 
+}
+
+aadhardoc(value:any){
+
+  this.customerAadhar=value.target.files[0]
+
+}
+
+pandoc(value:any){
+
+  this.customerPan=value.target.files[0]
+
+}
+profiledoc(value:any){
+
+  this.customerProfilePhoto=value.target.files[0]
+
+}
+signaturedoc(value:any){
+
+  this.customerSignature=value.target.files[0]
+
+}
+
+salaryslipdoc(value:any){
+
+  this.customerSalaryslip=value.target.files[0]
+
+}
+
+drivinglicensedoc(value:any){
+
+  this.customerDrivingLicense=value.target.files[0]
+
+}
+
+bankstatementdoc(value:any){
+
+  this.customerBankStatement=value.target.files[0]
+
+}
+
+carquotationdoc(value:any){
+
+ this.customerCarQuotation=value.target.files[0]
+
+}
+
+form16doc(value:any){
+
+   this.customerForm16=value.target.files[0]
+
+}
+
+itrdoc(value:any){
+
+ this.customerITR=value.target.files[0]
+
+ console.log(this.customerITR);
+
+}
+
+  savepersonaldetails(){
+
+    console.log(this.profileFormGroup.value);
+
+  }
 
 success(){
 
-    Swal.fire("Thank You..." , 'You Submitted Successfully','success')
+  let profilejson:string=JSON.stringify(this.profileFormGroup.value);
+  let permanentaddjson:string=JSON.stringify(this.permanentaddform.value);
+  let localaddjson:string=JSON.stringify(this.localaddform.value);
+  let bankdetailsjson:string=JSON.stringify(this.bankFormGroup.value);
+
+    const formData:FormData=new FormData();
+
+    formData.append("customerprofile",profilejson);
+    formData.append("permanentadd",permanentaddjson);
+    formData.append("localadd",localaddjson);
+    formData.append("bankdetails",bankdetailsjson);
+    formData.append("aadhar",this.customerAadhar);
+    formData.append("pan",this.customerPan);
+    formData.append("profilePhoto",this.customerProfilePhoto);
+    formData.append("signature",this.customerSignature);
+    formData.append("salarySlip",this.customerSalaryslip);
+    formData.append("drivingLicense",this.customerDrivingLicense);
+    formData.append("bankStatement",this.customerBankStatement);
+    formData.append("carQuotation",this.customerCarQuotation);
+    formData.append("form16",this.customerForm16);
+    formData.append("itr",this.customerITR);
+
+
+     this.cs.postcustomer(formData).subscribe((data:any)=>{console.warn(data);});
+    
+
+
+     Swal.fire("Thank You..." , 'You Submitted Successfully','success')
   }
+
+
 
 }
