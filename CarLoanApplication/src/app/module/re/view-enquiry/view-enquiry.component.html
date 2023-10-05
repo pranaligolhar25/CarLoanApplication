@@ -1,5 +1,5 @@
 <h2>Enquiry Details</h2>
-<div style="overflow-x:auto;">
+<div style="overflow-x:auto; ">
   <table>
     <tr>
       <th>Enquiry_Id</th>
@@ -8,14 +8,20 @@
     <th>Customer_Mobileno</th>
     <th>Customer_Aadharno</th>
     <th>Customer_Panno</th>
+    <th>Action</th>
     </tr>
     <tr *ngFor="let x of e">
-      <td>{{x.enquiryId}}</td>
+      <td>{{x.id}}</td>
       <td>{{x.customerName}}</td>
       <td>{{x.customerEmail}}</td>
       <td>{{x.customerMobileno}}</td>
       <td>{{x.customerAadharno}}</td>
       <td>{{x.customerPanno}}</td>
+      <td>
+        <button routerLink="addEnquiry/{{x.id}}" value="EDIT"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+        <button (click)="delete(x)" value="DELETE"><i class="fa fa-trash" aria-hidden="true"></i></button>
+    </td>
+
   </tr>
 </table>
 </div>

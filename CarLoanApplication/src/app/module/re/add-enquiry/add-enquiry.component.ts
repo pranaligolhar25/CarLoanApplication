@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EnquiryService } from 'src/app/Sheard/enquiry.service';
+import { Enquiry } from 'src/app/model/enquiry';
 
 @Component({
   selector: 'app-add-enquiry',
@@ -8,10 +10,12 @@ import { EnquiryService } from 'src/app/Sheard/enquiry.service';
   styleUrls: ['./add-enquiry.component.css']
 })
 export class AddEnquiryComponent {
-  constructor(private fb:FormBuilder,public es:EnquiryService)
+  constructor(private fb:FormBuilder,public es:EnquiryService,
+    private route:ActivatedRoute,
+    public router:Router)
   {}
   enquiryForm:FormGroup;
-
+  e:any;
   ngOnInit()
   {
     this.enquiryForm=this.fb.group(
@@ -23,6 +27,14 @@ export class AddEnquiryComponent {
         customerPanno:['', [Validators.required, Validators.pattern("^[A-Za-z]{5}[0-9]{4}[A-Za-z]$")]]
       }
     )
+
+    this.route.snapshot.params['id'];
+    // console.log(this.route.snapshot.params['id']);
+
+    this.es.viewEnquiryById( this.route.snapshot.params['id']).subscribe((e:any)=>{
+      this.enquiryForm.patchValue(e);
+    })
+
   }
   submitEnquiry()
   {
@@ -31,10 +43,17 @@ export class AddEnquiryComponent {
       this.es.enquiry.customerMobileno=this.enquiryForm.value.customerMobileno;
     this.es.enquiry.customerAadharno=this.enquiryForm.value.customerAadharno;
     this.es.enquiry.customerPanno=this.enquiryForm.value.customerPanno;
+    // if(this.es.enquiry.enquiryId==1)
+    // {
+      this.es.submitEnquiry(this.es.enquiry).subscribe();
+      window.location.reload();  
+    // }
+    // else{
+    //   this.es.updateEnquiry(this.es.enquiry).subscribe();
+    //   window.location.reload();
+    // }
 
 
-    this.es.submitEnquiry(this.es.enquiry).subscribe();
-    window.location.reload();
 
   }
   get f(){  
