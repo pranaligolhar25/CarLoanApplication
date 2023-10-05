@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,15 @@ import { Injectable } from '@angular/core';
 })
 export class EmployeeService {
 
-  constructor() { }
+  constructor(public http:HttpClient) { }
+
+  postemployee(customer:FormData){
+
+    return this.http.post("http://localhost:9090/employee/save_employee",customer);
+  }
+
+  getEmployee(){
+    return this.http.get("http://localhost:9090/employee/get_all_employee");
+  }
+
 }

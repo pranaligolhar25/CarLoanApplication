@@ -6,7 +6,7 @@
 
             <div class="body">
             <div class="container">
-                <form [formGroup]="firstFormGroup">
+                <form [formGroup]="profileFormGroup"class="fb">
         
                     <div class="form first">
                         <div class="details personal">
@@ -14,37 +14,37 @@
                             <div class="fields">
                                 <div class="input-field">
                                     <label>Full Name</label>
-                                    <input type="text" placeholder="Enter Your Name" required>
+                                    <input type="text" placeholder="Enter Your Name" formControlName="employeeName">
                                 </div>
             
                                 <div class="input-field">
                                     <label>Date Of Birth</label>
-                                    <input type="date" placeholder="Enter Your Birth Date" required>
+                                    <input type="date" placeholder="Enter Your Birth Date" formControlName="employeeDOB">
                                 </div>
             
                                 <div class="input-field">
                                     <label>Email</label>
-                                    <input type="email" placeholder="Enter Your Email" required>
+                                    <input type="email" placeholder="Enter Your Email" formControlName="employeeEmail">
                                 </div>
             
                                 <div class="input-field">
                                     <label>Mobile Number</label>
-                                    <input type="number" placeholder="Enter Your Mobile NO" required>
+                                    <input type="number" placeholder="Enter Your Mobile NO" formControlName="employeeMobileNo">
                                 </div>
             
                                 <div class="input-field">
                                     <label>Gender</label>
-                                    <select name="status" >
-                                        <option value="volvo">Male</option>
-                                        <option value="saab">Female</option>
-                                        <option value="saab">Other</option>
+                                    <select name="status" formControlName="employeeGender">
+                                        <option >Male</option>
+                                        <option >Female</option>
+                                        <option >Other</option>
                     
                                       </select>
                                 </div>
             
                                 <div class="input-field">
                                     <label>Role</label>
-                                    <select name="status" >
+                                    <select name="status" formControlName="employeeRole">
                                         <option value="volvo">relationship executive</option>
                                         <option value="saab">operation executive</option>
                                         <option value="saab">Credit manager</option>
@@ -61,22 +61,22 @@
                             <div class="fields">
                                 <div class="input-field">
                                     <label>Profile Photo</label>
-                                    <input type="file"  required>
+                                    <input type="file"  (change)="profiledoc($event)">
                                 </div>
             
                                 <div class="input-field">
                                     <label>Adhar Card</label>
-                                    <input type="file"  required>
+                                    <input type="file"  (change)="aadhardoc($event)">
                                 </div>
             
                                 <div class="input-field">
                                     <label>Pan Card</label>
-                                    <input type="file"  required>
+                                    <input type="file"  (change)="pandoc($event)">
                                 </div>
             
                                 <div class="input-field">
                                     <label>Signature</label>
-                                    <input type="file"  required>
+                                    <input type="file"  (change)="signaturedoc($event)">
                                 </div>
 
                             </div>
@@ -101,93 +101,98 @@
       
         <div class="body">
             <div class="container">
-                <form [formGroup]="firstFormGroup">
+                <div class="fb">
+                
         
                     <div class="form first">
+                        <form [formGroup]="permanentaddform">
                         <div class="details personal">
                             <span class="title">Permanat Address</span>
                             <div class="fields">
                                 <div class="input-field">
                                     <label>State</label>
-                                    <input type="text" placeholder="Enter State" required>
+                                    <input type="text" placeholder="Enter State" formControlName="employeeState">
                                 </div>
             
                                 <div class="input-field">
                                     <label>District</label>
-                                    <input type="text" placeholder="Enter District" required>
+                                    <input type="text" placeholder="Enter District" formControlName="employeeDistrict">
                                 </div>
             
                                 <div class="input-field">
                                     <label>City Name</label>
-                                    <input type="text" placeholder="Enter City" required>
+                                    <input type="text" placeholder="Enter City" formControlName="employeeCity">
                                 </div>
             
                                 <div class="input-field">
                                     <label>Area Name</label>
-                                    <input type="text" placeholder="Enter Area Name" required>
+                                    <input type="text" placeholder="Enter Area Name" formControlName="employeeArea">
                                 </div>
             
                                 <div class="input-field">
                                     <label>Land Mark</label>
-                                    <input type="text" placeholder="Enter Land Mark" required>
+                                    <input type="text" placeholder="Enter Land Mark" formControlName="employeeLandmark">
                                 </div>
             
                                 <div class="input-field">
                                     <label>Pin code</label>
-                                    <input type="text" placeholder="Enter Pin Code" required>
+                                    <input type="text" placeholder="Enter Pin Code" formControlName="employeePinCode">
                                 </div>
                             </div>
-                            <label>same as</label><input type="checkbox">
+                            <label>same as</label><input type="checkbox"  (change)="copyLocalToPermanent()">
                             
                         </div>
-            
+                    </form>
+                    
                         <div class="details ID">
+                            <form [formGroup]="localaddform">
                             <span class="title">Local Address</span>
                             <div class="fields">
                                 <div class="input-field">
                                     <label>State</label>
-                                    <input type="text" placeholder="Enter State" required>
+                                    <input type="text" placeholder="Enter State" formControlName="employeeState">
                                 </div>
             
                                 <div class="input-field">
                                     <label>District</label>
-                                    <input type="text" placeholder="Enter District" required>
+                                    <input type="text" placeholder="Enter District" formControlName="employeeDistrict">
                                 </div>
             
                                 <div class="input-field">
                                     <label>City Name</label>
-                                    <input type="text" placeholder="Enter City" required>
+                                    <input type="text" placeholder="Enter City" formControlName="employeeCity">
                                 </div>
             
                                 <div class="input-field">
                                     <label>Area Name</label>
-                                    <input type="text" placeholder="Enter Area Name" required>
+                                    <input type="text" placeholder="Enter Area Name" formControlName="employeeArea">
                                 </div>
             
                                 <div class="input-field">
                                     <label>Land Mark</label>
-                                    <input type="text" placeholder="Enter Land" required>
+                                    <input type="text" placeholder="Enter Land Mark" formControlName="employeeLandmark">
                                 </div>
             
                                 <div class="input-field">
                                     <label>Pin code</label>
-                                    <input type="text" placeholder="Enter Pin Code" required>
+                                    <input type="text" placeholder="Enter Pin Code" formControlName="employeePinCode">
                                 </div>
                                 
                             </div>
-                             
-                            
+                            <div class="buttons">
+                                <div class="backBtn">
+                                    <button mat-button matStepperPrevious >Back</button>
+                                 </div> 
+                                 <div class="nextBtn">  
+                                    <button mat-button matStepperNext >Next</button>
+                                  </div>
+                            </div>
+                        </form> 
                         </div>
-                        <div class="buttons">
-                        <div class="backBtn">
-                            <button mat-button matStepperPrevious >Back</button>
-                         </div> 
-                         <div class="nextBtn">  
-                            <button mat-button matStepperNext >Next</button>
-                          </div>
-                    </div>
+                      
                 </div>
-                    </form>
+                    
+                </div>
             </div>
         </div>
 
@@ -197,7 +202,8 @@
       
         <div class="body">
             <div class="container">
-                <form [formGroup]="firstFormGroup" class="bank">
+                
+                <form [formGroup]="bankFormGroup" class="bank fb">
         
                     <div class="form first">
                         <div class="details personal">
@@ -205,32 +211,32 @@
                             <div class="fields">
                                 <div class="input-field">
                                     <label>Account No</label>
-                                    <input type="number" placeholder="Enter Your Account no" required>
+                                    <input type="number" placeholder="Enter Your Account no" formControlName="employeeAccNo">
                                 </div>
             
                                 <div class="input-field">
                                     <label>Bank Name</label>
-                                    <input type="text" placeholder="Enter Bank Name" required>
+                                    <input type="text" placeholder="Enter Bank Name" formArrayName="employeeBankName">
                                 </div>
             
                                 <div class="input-field">
                                     <label>Brach Name</label>
-                                    <input type="text" placeholder="Enter Branch" required>
+                                    <input type="text" placeholder="Enter Branch" formControlName="employeeBranchName">
                                 </div>
             
                                 <div class="input-field">
                                     <label>IFSC Number</label>
-                                    <input type="number" placeholder="Enter IFSC no" required>
+                                    <input type="number" placeholder="Enter IFSC no" formControlName="employeeIFSCNo">
                                 </div>
             
                                 <div class="input-field">
                                     <label>Branch Code</label>
-                                    <input type="number" placeholder="Enter Branch Code" required>
+                                    <input type="number" placeholder="Enter Branch Code" formControlName="employeeBankCode">
                                 </div>
             
                                 <div class="input-field">
                                     <label>CIF Number</label>
-                                    <input type="text" placeholder="Enter CIF No" required>
+                                    <input type="text" placeholder="Enter CIF No" formControlName="employeeCIFNo">
                                 </div>
                             </div>
             
@@ -250,6 +256,7 @@
                     </div>
                 </div>
                     </form>
+                
             </div>
         </div>
 
@@ -272,7 +279,7 @@
       <div>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button (click)="stepper.reset()">Reset</button>
-        <button mat-button >save</button>
+        <button mat-button (click)="success()">save</button>
       </div>
     </div>
     </mat-step>
