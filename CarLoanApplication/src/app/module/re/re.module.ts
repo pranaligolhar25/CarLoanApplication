@@ -8,6 +8,7 @@ import { SendEnquiryFeedbackComponent } from './send-enquiry-feedback/send-enqui
 import { ViewAcceptedLoansComponent } from './view-accepted-loans/view-accepted-loans.component';
 import { ApplyForLoanComponent } from './apply-for-loan/apply-for-loan.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from 'src/app/material/material/material.module';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     ReRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MaterialModule
   ]
 })
 export class ReModule { }

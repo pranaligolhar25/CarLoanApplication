@@ -12,4 +12,24 @@ export class CustomerService {
 
     return this.http.post("http://localhost:9090/customer/save_customer",customer);
   }
+
+  getAllCustomer()
+  {
+    return this.http.get("http://localhost:9090/customer/getAll_customer");
+  }
+
+  getCustomerById(id:number)
+  {
+    return this.http.get("http://localhost:9090/customer/getSingle_customer/"+id);
+  }
+
+  updateCustomer(customer:FormData)
+  {
+    return this.http.put("http://localhost:9090/customer/update_customer",customer);
+  }
+
+  deleteCustomer(id:number)
+  {
+    return this.http.delete("http://localhost:9090/customer/delete_customer/"+id);
+  }
 }

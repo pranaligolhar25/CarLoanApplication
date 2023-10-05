@@ -2,14 +2,14 @@
 <mat-horizontal-stepper [linear]="isLinear" #stepper>
 
 
-    <mat-step [stepControl]="firstFormGroup">
+    <mat-step [stepControl]="profileFormGroup">
       
         <ng-template matStepLabel>Fill out your Profile</ng-template>
         
             <div class="body">
             <div class="container">
 
-                <form [formGroup]="firstFormGroup">
+                <form [formGroup]="profileFormGroup">
                     <h4>PERSONAL DETAILS</h4>
                     <div class="form first">
                         <div class="details personal">
@@ -17,43 +17,38 @@
                             <div class="fields">
                                 <div class="input-field">
                                     <label> Name</label>
-                                    <input type="text" placeholder="Enter Your Name" >
+                                    <input type="text" placeholder="Enter Your Name" formControlName="customerName">
                                 </div>
             
                                
             
                                 <div class="input-field">
                                     <label>Email</label>
-                                    <input type="email" placeholder="Enter Your Email" >
+                                    <input type="email" placeholder="Enter Your Email" formControlName="customerEmail">
                                 </div>
-                                <div class="input-field">
-                                    <label>Mobile Number</label>
-                                    <input type="number" placeholder="Enter Your Mobile NO" >
-                                </div>
-            
+
                                 <div class="input-field">
                                     <label>Aadhar Number</label>
-                                    <input type="number" placeholder="Enter Your Aadhar Nnumber" >
+                                    <input type="number" placeholder="Enter Your Aadhar Nnumber" formControlName="customerAadharno">
+                                </div>
+
+                                
+                                <div class="input-field">
+                                    <label>Pan Number</label>
+                                    <input type="number" placeholder="Enter Your Pan Nnumber" formControlName="customerPanno">
+                                </div>
+
+                                <div class="input-field">
+                                    <label>Mobile Number</label>
+                                    <input type="number" placeholder="Enter Your Mobile NO" formControlName="customerMobileno">
                                 </div>
             
-                                <div class="input-field">
-                                    <label>Gender</label>
-                                    <select name="status" >
-                                        <option value="volvo">Male</option>
-                                        <option value="saab">Female</option>
-                                        <option value="saab">Other</option>
-                    
-                                      </select>
-                                </div>
+
+                               
+
+                           
+                                
             
-                                <div class="input-field">
-                                    <label>Married Status</label>
-                                    <select name="status" >
-                                        <option value="volvo">married</option>
-                                        <option value="saab">unmarried</option>
-                    
-                                      </select>
-                                </div>
                                 
                             </div>
             
@@ -62,7 +57,7 @@
             
                         
                         <div>
-                            <button mat-raised-button matStepperNext color="warn">Next</button>
+                            <button mat-raised-button matStepperNext color="warn" (click)="savepersonaldetails()">Next</button>
                           </div>
                     </div>
                     
@@ -72,86 +67,104 @@
 
     </mat-step>
 
-    <mat-step [stepControl]="secondFormGroup" label="Fill out your Address">
+    <mat-step [stepControl]="permanentaddform" label="Fill out your Address">
       
         <div class="body">
             <div class="container">
-                <form [formGroup]="firstFormGroup">
-                    <h4>Local Address</h4>
-                    <div class="form first">
-                        <div class="details personal">
+                <form [formGroup]="permanentaddform">
+                    <div class="details ID">
+                        <h4>Permanent Address</h4>
+                        <div class="fields">
+
+                            <div class="input-field">
+                                <label>Area Name</label>
+                                <input type="text" placeholder="Enter Area Name" formControlName="areaName">
+                            </div>
+
+                            <div class="input-field">
+                                <label>City Name</label>
+                                <input type="text" placeholder="Enter City" formControlName="cityName">
+                            </div>
+
+                            <div class="input-field">
+                                <label>District</label>
+                                <input type="text" placeholder="Enter District" formControlName="districtName">
+                            </div>
+        
+                            
+                            <div class="input-field">
+                                <label>Land Mark</label>
+                                <input type="text" placeholder="Enter Land" formControlName="landMark">
+                            </div>
+        
+                            <div class="input-field">
+                                <label>State</label>
+                                <input type="text" placeholder="Enter State" formControlName="stateName">
+                            </div>
+        
+                            
                            
-                            <div class="fields">
-                                <div class="input-field">
-                                    <label>State</label>
-                                    <input type="text" placeholder="Enter State" >
-                                </div>
-            
-                                <div class="input-field">
-                                    <label>District</label>
-                                    <input type="text" placeholder="Enter District" >
-                                </div>
-            
-                                <div class="input-field">
-                                    <label>City Name</label>
-                                    <input type="text" placeholder="Enter City" >
-                                </div>
-            
-                                <div class="input-field">
-                                    <label>Area Name</label>
-                                    <input type="text" placeholder="Enter Area Name" >
-                                </div>
-            
+        
+                   
+        
+                            <div class="input-field">
+                                <label>Pin code</label>
+                                <input type="text" placeholder="Enter Pin Code" formControlName="pinCodeNumber">
+                            </div>
+                         
+                    </div>
+                    
+                    </div> 
+                </form>
+        
+                        <form [formGroup]="localaddform">   
+                             
+                    <h4>Local Address</h4>
+                    <div class="fields">
+                           
+                            <div class="input-field">
+                                <label>Area Name</label>
+                                <input type="text" placeholder="Enter Area Name" formControlName="areaName">
+                            </div>
+
+                            <div class="input-field">
+                                <label>City Name</label>
+                                <input type="text" placeholder="Enter City" formControlName="cityName">
+                            </div>
+
+                            <div class="input-field">
+                                <label>District</label>
+                                <input type="text" placeholder="Enter District" formControlName="districtName">
+                            </div>
+        
+
+                            
                                 <div class="input-field">
                                     <label>Land Mark</label>
-                                    <input type="text" placeholder="Enter Land Mark" >
+                                    <input type="text" placeholder="Enter Land Mark" formControlName="landMark">
                                 </div>
+
+                          
+                                <div class="input-field">
+                                    <label>State</label>
+                                    <input type="text" placeholder="Enter State" formControlName="stateName">
+                                </div>
+            
+                                
+                               
+            
+                               
+            
             
                                 <div class="input-field">
                                     <label>Pin code</label>
-                                    <input type="text" placeholder="Enter Pin Code" >
+                                    <input type="text" placeholder="Enter Pin Code" formControlName="pinCodeNumber">
                                 </div>
                             </div>
             
-                            
-                        </div>
+                      
             
-                        <div class="details ID">
-                            <h4>Permanent Address</h4>
-                            <div class="fields">
-                                <div class="input-field">
-                                    <label>State</label>
-                                    <input type="text" placeholder="Enter State" >
-                                </div>
-            
-                                <div class="input-field">
-                                    <label>District</label>
-                                    <input type="text" placeholder="Enter District" >
-                                </div>
-            
-                                <div class="input-field">
-                                    <label>City Name</label>
-                                    <input type="text" placeholder="Enter City" >
-                                </div>
-            
-                                <div class="input-field">
-                                    <label>Area Name</label>
-                                    <input type="text" placeholder="Enter Area Name" >
-                                </div>
-            
-                                <div class="input-field">
-                                    <label>Land Mark</label>
-                                    <input type="text" placeholder="Enter Land" >
-                                </div>
-            
-                                <div class="input-field">
-                                    <label>Pin code</label>
-                                    <input type="text" placeholder="Enter Pin Code" >
-                                </div>
-                            </div>
-            
-                            
-                        </div>
+                       
                         <div class="buttons">
                         <div class="backBtn">
                             <button mat-raised-button matStepperPrevious color="warn">Previous</button>
@@ -160,18 +173,18 @@
                             <button mat-raised-button matStepperNext color="warn">Next</button>
                           </div>
                     </div>
-                </div>
+               
                     </form>
             </div>
         </div>
 
     </mat-step>
 
-    <mat-step [stepControl]="secondFormGroup" label="Fill out your Bank Details">
+    <mat-step [stepControl]="bankFormGroup" label="Fill out your Bank Details">
       
         <div class="body">
             <div class="container">
-                <form [formGroup]="firstFormGroup" class="bank">
+                <form [formGroup]="bankFormGroup" class="bank">
                     <h4>Bank Details</h4>
                     <div class="form first">
                         <div class="details personal">
@@ -179,32 +192,29 @@
                             <div class="fields">
                                 <div class="input-field">
                                     <label>Account No</label>
-                                    <input type="number" placeholder="Enter Your Account no" >
+                                    <input type="number" placeholder="Enter Your Account no" formControlName="bankAccountNumber">
                                 </div>
             
                                 <div class="input-field">
                                     <label>Bank Name</label>
-                                    <input type="text" placeholder="Enter Bank Name" >
+                                    <input type="text" placeholder="Enter Bank Name" formControlName="bankName">
                                 </div>
             
                                 <div class="input-field">
                                     <label>Brach Name</label>
-                                    <input type="text" placeholder="Enter Branch" >
+                                    <input type="text" placeholder="Enter Branch" formControlName="branchName">
                                 </div>
             
                                 <div class="input-field">
                                     <label>IFSC Number</label>
-                                    <input type="number" placeholder="Enter IFSC no" >
+                                    <input type="number" placeholder="Enter IFSC no" formControlName="ifscNumber">
                                 </div>
             
-                                <div class="input-field">
-                                    <label>Branch Code</label>
-                                    <input type="number" placeholder="Enter Branch Code" >
-                                </div>
+                               
             
                                 <div class="input-field">
                                     <label>CIF Number</label>
-                                    <input type="text" placeholder="Enter CIF No" >
+                                    <input type="text" placeholder="Enter CIF No" formControlName="cardNumber">
                                 </div>
                             </div>
             
@@ -227,68 +237,70 @@
             </div>
         </div>
 
-
-
-      
-
-
     </mat-step>
 
-    <mat-step [stepControl]="secondFormGroup" label="Fill out your Document">
+    <mat-step label="Fill out your Document">
       
         <div class="body">
             <div class="container">
-                <form [formGroup]="firstFormGroup" class="Doccument">
+                <form  class="Doccument">
                     <h4>Document Details</h4>
                     <div class="form first">
                         <div class="details personal">
                          
                             <div class="fields"> 
-                                <div class="input-field">
-                                    <label>Profile Photo</label>
-                                    <input type="file"  >
-                                </div>
+                               
             
                                 <div class="input-field">
                                     <label>Adhar Card</label>
-                                    <input type="file"  >
+                                    <input type="file"  (change)="aadhardoc($event)">
                                 </div>
             
                                 <div class="input-field">
                                     <label>Pan Card</label>
-                                    <input type="file"  >
+                                    <input type="file"  (change)="pandoc($event)">
+                                </div>
+
+                                <div class="input-field">
+                                    <label>Profile Photo</label>
+                                    <input type="file"  (change)="profiledoc($event)">
                                 </div>
             
                                 <div class="input-field">
                                     <label>Signature</label>
-                                    <input type="file"  >
+                                    <input type="file"  (change)="signaturedoc($event)">
                                 </div>
             
                                 <div class="input-field">
                                     <label>Salary Slip</label>
-                                    <input type="file"  >
+                                    <input type="file"  (change)="salaryslipdoc($event)">
                                 </div>
             
                            
                                 <div class="input-field">
                                     <label>Driving License</label>
-                                    <input type="file"  >
+                                    <input type="file"  (change)="drivinglicensedoc($event)">
+                                </div>
+
+                                <div class="input-field">
+                                    <label>Bank Statements</label>
+                                    <input type="file"  (change)="bankstatementdoc($event)">
                                 </div>
 
                                 <div class="input-field">
                                     <label>Car Quotation</label>
 
-                                    <input type="file"  >
+                                    <input type="file"  (change)="carquotationdoc($event)">
                                 </div>
 
                                 <div class="input-field">
                                     <label>Form 16</label>
-                                    <input type="file"  >
+                                    <input type="file"  (change)="form16doc($event)">
                                 </div>
 
                                 <div class="input-field">
                                     <label>ITR</label>
-                                    <input type="file"  >
+                                    <input type="file"  (change)="itrdoc($event)">
                                 </div>
 
                             </div>
@@ -314,14 +326,14 @@
 
 
 
-      
 
 
+
+
+
+
+        
     </mat-step>
-    
-
-
-
 
     <mat-step>
 
