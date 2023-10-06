@@ -1,3 +1,5 @@
+import { CustomerCibilDetails } from "./customer-cibil-details";
+
 export class Enquiry {
     id:number;
     customerName:String;
@@ -5,6 +7,7 @@ export class Enquiry {
     customerMobileno:number;
     customerAadharno:number;
     customerPanno:String;
+    customerCibilDetails:CustomerCibilDetails;
     applicationStatus:String
 
 }

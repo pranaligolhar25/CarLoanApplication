@@ -64,7 +64,7 @@
                       <label for="aadhar" class="form-label">AadharCard Number <span class="text-danger">*</span></label>
                       <div class="input-group">
                         <input type="text" class="form-control" id="aadhar" name="aadhar" placeholder="Enter AadharCard NO" formControlName="customerAadharno" value="" required>
-                        <div *ngIf="f.customerAadharno.touched && f.customerMobileno.invalid" class="alert alert-danger">  
+                        <div *ngIf="f.customerAadharno.touched && f.customerAadharno.invalid" class="alert alert-danger">  
                           <div *ngIf="f.customerAadharno.errors.required">Aadhar Number is required.</div>  
                           <div *ngIf="f.customerAadharno.errors.pattern">Please, Enter 12 digit Aadhar Number.</div>
                       </div>

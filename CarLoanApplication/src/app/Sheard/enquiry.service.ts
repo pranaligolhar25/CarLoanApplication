@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Enquiry } from '../model/enquiry';
+import { CustomerCibilDetails } from '../model/customer-cibil-details';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,8 @@ export class EnquiryService {
     customerMobileno: 0,
     customerAadharno: 0,
     customerPanno: undefined,
-    applicationStatus: undefined
+    applicationStatus: undefined,
+    customerCibilDetails: new CustomerCibilDetails
   }
   submitEnquiry(e:Enquiry) {
     return this.http.post("http://localhost:9090/enquiry/save_enquiry",e);

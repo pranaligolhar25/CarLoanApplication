@@ -23,7 +23,7 @@ export class AddEnquiryComponent {
         customerName:[],
         customerEmail:['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]],
         customerMobileno:['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]] ,
-        customerAadharno:['', [Validators.required, Validators.pattern("[0-9]{4}\s[0-9]{4}\s[0-9]{4}$")]],
+        customerAadharno:['', [Validators.required, Validators.pattern("[0-9]{4}[0-9]{4}[0-9]{4}$")]],
         customerPanno:['', [Validators.required, Validators.pattern("^[A-Za-z]{5}[0-9]{4}[A-Za-z]$")]]
       }
     )
