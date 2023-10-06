@@ -48,4 +48,8 @@ export class EnquiryService {
   cibil(s:any){
     return this.http.put("http://localhost:9090/enquiry/check_cibil/"+s,s);
   }
+  cibilget(s:any){
+    alert(s)
+    return this.http.get("http://localhost:9090/enquiry/get_by_pan/"+s);
+  }
 }

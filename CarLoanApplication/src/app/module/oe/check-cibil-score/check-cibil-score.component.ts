@@ -9,10 +9,15 @@ import { EnquiryService } from 'src/app/Sheard/enquiry.service';
 export class CheckCibilScoreComponent {
   constructor(private cs:EnquiryService){}
   ssn: any;
-  creditScore: number;
+  creditScore:any[];
 
   getCreditScore() {
     this.cs.cibil(this.ssn).subscribe();
-    
+    this.cs.cibilget(this.ssn).subscribe((a:any[])=>{
+     
+      this.creditScore=a;
+    })
   }
+
+  
 }
