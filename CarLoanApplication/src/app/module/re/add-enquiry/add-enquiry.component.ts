@@ -43,7 +43,7 @@ export class AddEnquiryComponent {
       this.es.enquiry.customerMobileno=this.enquiryForm.value.customerMobileno;
     this.es.enquiry.customerAadharno=this.enquiryForm.value.customerAadharno;
     this.es.enquiry.customerPanno=this.enquiryForm.value.customerPanno;
-    // if(this.es.enquiry.enquiryId==1)
+    // if(this.es.enquiry.id==1)
     // {
       this.es.submitEnquiry(this.es.enquiry).subscribe();
       window.location.reload();  

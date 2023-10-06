@@ -1,16 +1,22 @@
-<p>view-accepted-loans works!</p>
-<h2>Accepted Loan Details</h2>
-<div style="overflow-x:auto;">
-  <table>
+<div class="container" style="overflow-x:auto;">
+  <h1 style=" margin-bottom: 30px; font-size: 30px; font-weight: 800; text-align: center;">Accepted Loan Details</h1>
+
+  <mat-card class="custom-card">
+    
+    <table class="table" align="center" >
+        <thead >
+
     <tr>
-      <th>Enquiry_Id</th>
-    <th>Customer_Name</th>
-    <th>Customer_Email</th>
-    <th>Customer_Mobileno</th>
-    <th>Customer_Aadharno</th>
-    <th>Customer_Panno</th>
-    <th>applicationStatus</th>
+      <th scope="col">Enquiry_Id</th>
+    <th scope="col">Customer_Name</th>
+    <th scope="col">Customer_Email</th>
+    <th scope="col">Customer_Mobileno</th>
+    <th scope="col">Customer_Aadharno</th>
+    <th scope="col">Customer_Panno</th>
+    <th scope="col">applicationStatus</th>
     </tr>
+    </thead>
+    <tbody>
     <tr *ngFor="let x of e">
       <td>{{x.id}}</td>
       <td>{{x.customerName}}</td>
@@ -20,5 +26,7 @@
       <td>{{x.customerPanno}}</td>
       <td>{{x.applicationStatus}}</td>
   </tr>
+</tbody>
 </table>
+  </mat-card>
 </div>

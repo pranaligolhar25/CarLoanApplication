@@ -15,11 +15,11 @@ export class ViewAcceptedLoansComponent {
   e:Enquiry[];
   ngOnInit()
   {
+    {
+      this.es.viewEnquiryStatus(this.es.enquiry).subscribe((e:Enquiry[])=>{
+        this.e=e;
+      });
   }
-  viewEnquiryStatus(e:Enquiry)
-  {
-  this.es.viewEnquiryStatus(e).subscribe((e:Enquiry[])=>{
-    this.e=e;
-  });
+  
   }
 }
