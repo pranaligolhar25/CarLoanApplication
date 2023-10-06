@@ -35,8 +35,9 @@ export class EnquiryService {
     return this.http.get("http://localhost:9090/enquiry/get_by_status/"+e.applicationStatus);
 
   }
-  updateEnquiry(e:Enquiry)
+  updateEnquiry(e:any)
   {
+    
     return this.http.put("http://localhost:9090/enquiry/update_enquiry/"+e.id,e);
   }
   

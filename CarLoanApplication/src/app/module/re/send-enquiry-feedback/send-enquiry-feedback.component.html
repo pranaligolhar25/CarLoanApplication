@@ -10,11 +10,11 @@
         <th scope="col">Enquiry_Id</th>
       <th scope="col">Customer_Name</th>
       <th scope="col">Customer_Email</th>
-      <th scope="col">Customer_Mobileno</th>
       <th scope="col">Customer_Aadharno</th>
       <th scope="col">Customer_Panno</th>
       <th scope="col">Cibil_Score</th>
       <th scope="col">Cibil_Status</th>
+      <th scope="col">Status</th>
       <th scope="col">Action</th>
       </tr>
           </thead>
@@ -24,14 +24,14 @@
         <td>{{x.id}}</td>
         <td>{{x.customerName}}</td>
         <td>{{x.customerEmail}}</td>
-        <td>{{x.customerMobileno}}</td>
         <td>{{x.customerAadharno}}</td>
         <td>{{x.customerPanno}}</td>
         <td>{{x.customerCibilDetails.cibilScore}}</td>
         <td>{{x.customerCibilDetails.cibilStatus}}</td>
+        <td>{{x.applicationStatus}}</td>
         <td>
-          <button routerLink="../addEnquiry/{{x.id}}" value="EDIT"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-          <button  value="DELETE"><i class="fa fa-trash" aria-hidden="true"></i></button>
+          <button  (click)="updatesave(x)" ><i class="fa fa-pencil" aria-hidden="true"></i></button>
+          <button  (click)="reject(x)"><i class="fa fa-trash" aria-hidden="true"></i></button>
       </td>
   
     </tr>

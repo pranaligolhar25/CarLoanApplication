@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EnquiryService } from 'src/app/Sheard/enquiry.service';
 
 @Component({
@@ -8,9 +9,10 @@ import { EnquiryService } from 'src/app/Sheard/enquiry.service';
 })
 export class SendEnquiryFeedbackComponent {
 
-  constructor(private es:EnquiryService){}
+  constructor(private es:EnquiryService,private fb:FormBuilder){}
 
   enq:any[];
+  
 
   ngOnInit(){
 
@@ -19,8 +21,21 @@ export class SendEnquiryFeedbackComponent {
       this.enq=e;
 
     });
-
+   
+   
   }
-updateStatus(){
+
+
+updatesave(x){
+  
+ x.applicationStatus="accept";
+ alert(x.applicationStatus)
+  this.es.updateEnquiry(x).subscribe();
 }
+reject(x){
+ x.applicationStatus="reject";
+ alert(x.applicationStatus)
+  this.es.updateEnquiry(x).subscribe();
+}
+
 }
