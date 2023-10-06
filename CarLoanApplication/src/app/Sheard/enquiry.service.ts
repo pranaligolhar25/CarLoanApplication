@@ -43,4 +43,7 @@ export class EnquiryService {
     return this.http.delete("http://localhost:9090/enquiry/delete_enquiry/"+e.id);
 
   }
+  cibil(s:any){
+    return this.http.put("http://localhost:9090/enquiry/check_cibil/"+s,s);
+  }
 }

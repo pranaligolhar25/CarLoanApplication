@@ -1,1 +1,46 @@
-<p>view-employee works!</p>
+<body>
+    <div class="table">
+        <div class="table_header">
+            <p>employee Detail</p>
+        <div>
+            <input type="text">
+            <button class="add_new">search</button>
+        </div>
+    </div>
+    <div class="table_section">
+        <table>
+            <thead>
+                <tr>
+                    <th>s no</th>
+                    <th>name</th>
+                    <th>email</th>
+                    <th>adsd</th>
+                    <th>edde</th>
+                    <th>action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let d of emp">
+                    <td>{{d.employeeId}}</td>
+                    <td><img src="" alt=""></td>
+                    <td>{{d.employeeName}}</td>
+                    <td>{{d.employeeDOB}}</td>
+                    <td>{{d.employeeMobileNo}}</td>
+                    <td>
+                       <button><i class="fa fa-pen-to-square"></i></button>
+                       <button><i class="fa fa-trash"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="pagination">
+        <div></div>
+        <div></div>
+        <div>1</div>
+        <div>2</div>
+        <div><i class="fa fa-trash"></i></div>
+        <div></div>
+    </div>
+    </div>
+</body>

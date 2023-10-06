@@ -10,8 +10,8 @@
         <div class="card-details">
             <div class="name-number">
                 <h6>Card Number</h6>
-                <input type="text" class="number"placeholder="  ">
-                 <input type="text" class="h">
+                <input type="text" class="number"placeholder="  " [(ngModel)]="ssn">
+                 <input type="text" class="h"value="{{creditScore}}">
                 <h5 class="name">Vaibhav Sanjay Karale </h5>
             </div>
             <div class="valid-date">
@@ -19,7 +19,7 @@
                 <h5>05/28</h5>
             </div>
         </div>
-        <button>check</button>
+        <button (click)="getCreditScore()">check</button>
     </div>
     
 </body>
