@@ -1,9 +1,8 @@
-<div class="container" style="overflow-x:auto;">
-    <h1 style=" margin-bottom: 30px; font-size: 30px; font-weight: 800; text-align: center;">Enquiry Details</h1>
-  
+
     <mat-card class="custom-card">
-      
-      <table class="table" align="center" >
+      <h2>FeedBack</h2>
+<div style="overflow-x:auto;">
+      <table class="table" align="center"  >
           <thead >
   
       <tr>
@@ -33,10 +32,36 @@
           <button  (click)="updatesave(x)" ><i class="fa fa-pencil" aria-hidden="true"></i></button>
           <button  (click)="reject(x)"><i class="fa fa-trash" aria-hidden="true"></i></button>
       </td>
-  
-    </tr>
-        </tbody>
-  </table>
-    </mat-card>
-  </div>
-  
+
+
+<!-- 
+<h2>FeedBack</h2>
+<div style="overflow-x:auto;">
+  <table>
+    <tr>
+      <th>Enquiry_Id</th>
+    <th>Customer_Name</th>
+    <th>Customer_Mobileno</th>
+    <th>Customer_Panno</th>
+    <th scope="col">Cibil_Score</th>
+      <th scope="col">Cibil_Status</th>
+    <th>Action</th>
+>>>>>>> Stashed changes -->
+    <!-- </tr>
+    <tr *ngFor="let x of enq">
+      <td>{{x.id}}</td>
+      <td>{{x.customerName}}</td>
+      <td>{{x.customerEmail}}</td>
+      <td>{{x.customerMobileno}}</td>
+      <td>{{x.customerCibilDetails.cibilScore}}</td>
+      <td>{{x.customerCibilDetails.cibilStatus}}</td>
+      <td>
+        <button routerLink="../addEnquiry/{{x.id}}" value="EDIT"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+        <button  value="DELETE"><i class="fa fa-trash" aria-hidden="true"></i></button>
+    </td> -->
+      
+  <!-- </tr> -->
+</table>
+</div>
+
+

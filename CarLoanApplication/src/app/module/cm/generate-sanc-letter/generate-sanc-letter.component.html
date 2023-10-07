@@ -1,1 +1,38 @@
-<p>generate-sanc-letter works!</p>
+<div class="container" style="overflow-x:auto;">
+    <h1 style=" margin-bottom: 30px; font-size: 30px; font-weight: 800; text-align: center;"> Loan Application List</h1>
+  
+    <mat-card class="custom-card">
+      
+      <table class="table"  align="center" >
+          <thead  >
+            <tr >
+              <th scope="col">Profile Photo</th>
+              <th scope="col">Customer Id</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Mobile No</th>
+              <th scope="col">View</th>
+            </tr>
+          </thead>
+          <tbody >
+            <tr *ngFor="let a of CustomerList">
+              <td><img style="border: 2px solid #00838F;" [src]="'data:image/png;base64,'+a.customerDocuments.customerProfilePhoto" height="75px" width="75px"></td>
+              <td scope="row">{{a.customerId}}</td>
+              <td>{{a.customerName}}</td>
+              <td>{{a.customerEmail}}</td>
+              <td>{{a.customerMobileno}}</td>
+              <td>
+                <button mat-fab extended color="warn" (click)="generatePdf(a)">       
+                  Generate PDF
+                </button>
+                </td>
+              </tr>
+          </tbody>
+        </table>
+  </mat-card>
+  </div>
+
+
+  <!-- <button mat-fab extended color="warn" (click)="generatePdf()" >       
+    Generate PDF
+  </button> -->

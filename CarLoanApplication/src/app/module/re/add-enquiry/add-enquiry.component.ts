@@ -43,6 +43,7 @@ export class AddEnquiryComponent {
       this.es.enquiry.customerMobileno=this.enquiryForm.value.customerMobileno;
     this.es.enquiry.customerAadharno=this.enquiryForm.value.customerAadharno;
     this.es.enquiry.customerPanno=this.enquiryForm.value.customerPanno;
+    this.es.enquiry.applicationStatus="null";
     // if(this.es.enquiry.id==1)
     // {
       this.es.submitEnquiry(this.es.enquiry).subscribe();
@@ -52,6 +53,9 @@ export class AddEnquiryComponent {
     //   this.es.updateEnquiry(this.es.enquiry).subscribe();
     //   window.location.reload();
     // }
+
+
+   
 
 
 

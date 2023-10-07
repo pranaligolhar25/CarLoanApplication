@@ -19,8 +19,7 @@ export class UserOption {
           customer:[
 
                 {label:'Apply For Loan' , path:'apply_loan'},
-                {label:'Feature & Benifits' , path :'feature_Benifits'},
-                {label:'FAQS' , path :'faqs'},
+      
                 {label:'EMI Calculator' , path :'emical'},
                 {label:'Track Status' , path :'track_status'},
                 {label:'How to Apply' , path :'how_to_apply'},

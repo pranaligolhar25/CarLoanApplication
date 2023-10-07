@@ -27,6 +27,10 @@ export class CustomerService {
   {
     return this.http.put("http://localhost:9090/customer/update_customer",customer);
   }
+  updateCustomerStatus(customer:any)
+  {
+    return this.http.put("http://localhost:9090/customer/update_customer_status",customer);
+  }
 
   deleteCustomer(id:number)
   {

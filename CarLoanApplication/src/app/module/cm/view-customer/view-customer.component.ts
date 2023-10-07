@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerService } from 'src/app/Sheard/customer.service';
 
 @Component({
-  selector: 'app-customer-data',
-  templateUrl: './customer-data.component.html',
-  styleUrls: ['./customer-data.component.css']
+  selector: 'app-view-customer',
+  templateUrl: './view-customer.component.html',
+  styleUrls: ['./view-customer.component.css']
 })
-export class CustomerDataComponent implements OnInit {
-  
+export class ViewCustomerComponent {
+
   constructor(private route:ActivatedRoute, 
     private router:Router,
     public cs:CustomerService,
@@ -40,8 +40,8 @@ export class CustomerDataComponent implements OnInit {
 
   ngOnInit(): void {
     this.cs.getCustomerById(this.route.snapshot.params['id']).subscribe((data:any)=>{
-          this.customer=data;
-        this.profileFormGroup.patchValue(data);
+      this.customer=data
+      this.profileFormGroup.patchValue(data);
         this.permanentaddform.patchValue(data.customerPermanentAddress);
         this.localaddform.patchValue(data.customerLocalAddress);
         this.bankFormGroup.patchValue(data.customerBankDetails);
@@ -72,25 +72,25 @@ export class CustomerDataComponent implements OnInit {
   customerForm16:any;
   customerITR:any;
 
-  Adharcheck = false;
-  Pancheck = false;
-  Profilecheck = false;
-  Signcheck = false;
-  salarycheck = false;
-  Drivingcheck = false;
-  Bankcheck = false;
-  CarQcheck = false;
-  Form16check = false;
-  Itrchecked = false;
-
+  Adharcheck = true;
+  Pancheck = true;
+  Profilecheck = true;
+  Signcheck = true;
+  salarycheck = true;
+  Drivingcheck = true;
+  Bankcheck = true;
+  CarQcheck = true;
+  Form16check = true;
+  Itrchecked = true;
+  isInputDisabled: boolean = false;
+  
   profileFormGroup: FormGroup = this._formBuilder.group({
     // firstCtrl: [''],
     customerName:['',Validators.required],
     customerEmail:['',Validators.required],
     customerAadharno:['',Validators.required],
     customerPanno:['',Validators.required],
-    customerMobileno:['',Validators.required],
-    applicationStatus:[]
+    customerMobileno:['',Validators.required]
 
   });
 
@@ -128,21 +128,20 @@ bankFormGroup: FormGroup = this._formBuilder.group({
 
 });
 
-DocumentVerified()
+sanctionLetter()
 {
-  this.customer.applicationStatus="Documents Verified";
+  this.customer.applicationStatus="Loan Sanctioned";
   this.cs.updateCustomerStatus(this.customer).subscribe();
   window.location.reload();
-}  
+}
 
 Reject()
 {
-  this.profileFormGroup.value.applicationStatus="Reject";
-  this.cs.updateCustomerStatus(this.permanentaddform.value).subscribe();
+  this.customer.applicationStatus="Reject";
+  this.cs.updateCustomerStatus(this.customer).subscribe();
   window.location.reload();
 }
 
 
-  }
 
-
+}

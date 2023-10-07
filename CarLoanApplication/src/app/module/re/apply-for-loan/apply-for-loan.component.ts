@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { CustomerService } from 'src/app/Sheard/customer.service';
+import { EnquiryService } from 'src/app/Sheard/enquiry.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -10,7 +12,10 @@ import Swal from 'sweetalert2';
 })
 export class ApplyForLoanComponent {
 
-  constructor(private _formBuilder: FormBuilder , public cs:CustomerService) {}
+  constructor(private _formBuilder: FormBuilder , 
+    public cs:CustomerService,
+    public es:EnquiryService,
+    public route:ActivatedRoute) {}
 
   customerAadhar:any;
   customerPan:any;
@@ -71,9 +76,15 @@ bankFormGroup: FormGroup = this._formBuilder.group({
 
   isLinear = false;
 
+  enq:any;
  
 ngOnInit(): void {
   
+  this.es.viewEnquiryById(this.route.snapshot.params['id']).subscribe((e:any)=>{
+    this.profileFormGroup.patchValue(e);
+    this.enq=e;
+  })
+
 
 }
 
@@ -144,7 +155,7 @@ itrdoc(value:any){
   }
 
 success(){
-
+  this.profileFormGroup.value.applicationStatus="Document Verification";
   let profilejson:string=JSON.stringify(this.profileFormGroup.value);
   let permanentaddjson:string=JSON.stringify(this.permanentaddform.value);
   let localaddjson:string=JSON.stringify(this.localaddform.value);
@@ -173,7 +184,11 @@ success(){
 
 
      Swal.fire("Thank You..." , 'You Submitted Successfully','success')
-  }
+
+     this.enq.applicationStatus="Application Registered";
+     this.es.updateEnquiry(this.enq).subscribe();
+  
+    }
 
 
 

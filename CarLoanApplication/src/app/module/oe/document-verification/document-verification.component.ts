@@ -10,11 +10,17 @@ export class DocumentVerificationComponent implements OnInit{
 
 constructor(public cs:CustomerService){}
 
-CustomerList:any[];
+CustomerList:any[]=[];
   ngOnInit(): void {
     
-    this.cs.getAllCustomer().subscribe((val:any[])=>this.CustomerList=val);
+    this.cs.getAllCustomer().subscribe((customers:any[])=>{
+      customers.forEach(customer=>
+        {
+          if(customer.applicationStatus=="Document Verification")
+          {
+              this.CustomerList.push(customer);
+          }
+        })
+      });
   }
-
-
 }

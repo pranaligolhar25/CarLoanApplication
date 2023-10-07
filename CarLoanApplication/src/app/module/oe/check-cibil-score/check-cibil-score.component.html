@@ -1,26 +1,73 @@
-<body>
-    <div class="container">
-        <header>
-            <span class="logo">
-                <img src="assets\Images\Mastercar.png" alt="">
-                <h5>Master Card</h5>
-            </span>
-            <img src="https://static.vecteezy.com/system/resources/thumbnails/013/139/346/small/golden-sim-chip-card-microchip-for-payment-or-credit-card-vector.jpg" alt="" class="chip">
-        </header>
-        <div class="card-details">
-            <div class="name-number">
-                <h6>Card Number</h6>
-                <input type="text" class="number"placeholder="  " [(ngModel)]="ssn">
-                 <input type="text" class="h"value="{{creditScore}}">
-                <h5 class="name">Vaibhav Sanjay Karale </h5>
-            </div>
-            <div class="valid-date">
-                <h6>valid Thru</h6>
-                <h5>05/28</h5>
-            </div>
-        </div>
-        <button (click)="getCreditScore()">check</button>
-    </div>
+
+<div *ngIf="condition; else elseBlock">
     
-</body>
+    <body>
+        <div class="container">
+            <header>
+                <span class="logo">
+                    <img src="assets\Images\Mastercar.png" alt="">
+                    <h5>Pan Card</h5>
+                </span>
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/013/139/346/small/golden-sim-chip-card-microchip-for-payment-or-credit-card-vector.jpg" alt="" class="chip">
+            </header>
+            <div class="card-details">
+                <div class="name-number">
+                    <h6>PanCard Number</h6>
+                    <input type="text" class="number" placeholder="  " [(ngModel)]="ssn">
+                    <h6>Credit Score</h6> 
+                    <input type="text"  [(ngModel)]="creditScore" >
+                    <h6>Credit Status</h6> 
+                    <input type="text"  [(ngModel)]="creditStatus" >
+                    
+                    
+                    <h5 class="name">{{pancardname}}</h5>
+                </div>
+                <div class="valid-date">
+                    <h6>valid Thru</h6>
+                    <h5>05/28</h5>
+                </div>
+            </div>
+            <div class="row">
+              <button (click)="getCreditScore()" style="background-color: green;">check</button>
+              <button (click)="cibilChecked()" style="background-color: green;">ok</button>
+            </div>
+            
+            
+            
+        </div>
+        
+    </body>
+
+  </div>
+  <ng-template #elseBlock>
+
+    
+<h2>Enquiry Details</h2>
+<div style="overflow-x:auto;">
+  <table>
+    <tr>
+      <th>Enquiry_Id</th>
+    <th>Customer_Name</th>
+    <th>Customer_Email</th>
+    <th>Customer_Mobileno</th>
+    <th>Customer_Panno</th>
+    <th>Check Cibil score</th>
+    </tr>
+    <tr *ngFor="let x of enq">
+      <td>{{x.id}}</td>
+      <td>{{x.customerName}}</td>
+      <td>{{x.customerEmail}}</td>
+      <td>{{x.customerMobileno}}</td>
+      
+      <td>{{x.customerPanno}}</td>
+      <td><button mat-raised-button color="warn" (click)="checkCibil(x)">Check Cibil</button></td>
+  </tr>
+</table>
+</div>
+
+ 
+  </ng-template>
+
+
+
 

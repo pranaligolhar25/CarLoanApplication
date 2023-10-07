@@ -16,8 +16,12 @@ export class EnquiryService {
     customerMobileno: 0,
     customerAadharno: 0,
     customerPanno: undefined,
+
     applicationStatus: undefined,
     customerCibilDetails: new CustomerCibilDetails
+
+   
+
   }
   submitEnquiry(e:Enquiry) {
     return this.http.post("http://localhost:9090/enquiry/save_enquiry",e);
@@ -26,6 +30,7 @@ export class EnquiryService {
   {
     return this.http.get("http://localhost:9090/enquiry/getAll_enquiry");
   }
+
   viewEnquiryById(id:number)
   {
     return this.http.get("http://localhost:9090/enquiry/getSingle_enquiry/"+id);
@@ -52,5 +57,14 @@ export class EnquiryService {
   cibilget(s:any){
     alert(s)
     return this.http.get("http://localhost:9090/enquiry/get_by_pan/"+s);
-  }
+
+//   updateEnquiry(e:Enquiry) {
+//     return this.http.put("http://localhost:9090/enquiry/update_enquiry/"+e.id,e);
+//   }
+//   deleteEnquiry(id:number)
+//   {
+//     return this.http.delete("http://localhost:9090/enquiry/delete_enquiry/"+id);
+// >>>>>>> Stashed changes
+//   }
+}
 }

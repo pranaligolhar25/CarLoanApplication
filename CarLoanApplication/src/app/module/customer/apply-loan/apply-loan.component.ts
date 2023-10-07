@@ -172,6 +172,7 @@ success(){
     formData.append("permanentadd",permanentaddjson);
     formData.append("localadd",localaddjson);
     formData.append("bankdetails",bankdetailsjson);
+    
     formData.append("aadhar",this.customerAadhar);
     formData.append("pan",this.customerPan);
     formData.append("profilePhoto",this.customerProfilePhoto);

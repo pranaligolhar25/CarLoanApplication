@@ -7,7 +7,10 @@ export class Enquiry {
     customerMobileno:number;
     customerAadharno:number;
     customerPanno:String;
+
     customerCibilDetails:CustomerCibilDetails;
     applicationStatus:String
+
+
 
 }

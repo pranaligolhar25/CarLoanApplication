@@ -7,28 +7,36 @@
         <thead >
 
     <tr>
+
       <th scope="col">Enquiry_Id</th>
     <th scope="col">Customer_Name</th>
     <th scope="col">Customer_Email</th>
     <th scope="col">Customer_Mobileno</th>
     <th scope="col">Customer_Aadharno</th>
     <th scope="col">Customer_Panno</th>
-    <th scope="col">Action</th>
+    <!-- <th scope="col">Edit</th>
+    <th scope="col">Delete</th> -->
+    <th scope="col">Check Cibil</th>
     </tr>
         </thead>
       <tbody >
+    <tr *ngFor="let x of enq">
 
-    <tr *ngFor="let x of e">
       <td>{{x.id}}</td>
       <td>{{x.customerName}}</td>
       <td>{{x.customerEmail}}</td>
       <td>{{x.customerMobileno}}</td>
       <td>{{x.customerAadharno}}</td>
       <td>{{x.customerPanno}}</td>
-      <td>
+
+      <!-- <td>
         <button routerLink="../addEnquiry/{{x.id}}" value="EDIT"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-        <button (click)="delete(x)" value="DELETE"><i class="fa fa-trash" aria-hidden="true"></i></button>
-    </td>
+      </td>
+        <td><button (click)="delete(x)" value="DELETE"><i class="fa fa-trash" aria-hidden="true"></i></button>
+        </td> -->
+
+
+      <td><button mat-raised-button color="warn" (click)="checkCibil(x)">Check Cibil</button></td>
 
   </tr>
       </tbody>

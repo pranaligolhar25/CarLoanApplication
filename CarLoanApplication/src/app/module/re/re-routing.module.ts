@@ -14,6 +14,7 @@ const routes: Routes = [
   { path:"viewenq",component:ViewEnquiryComponent },
   { path:"sendEnqFeed",component:SendEnquiryFeedbackComponent },
   { path:"applyloan",component:ApplyForLoanComponent },
+  { path:"applyloan/:id",component:ApplyForLoanComponent },
   { path:"viewloans",component:ViewAcceptedLoansComponent },
 
 ];

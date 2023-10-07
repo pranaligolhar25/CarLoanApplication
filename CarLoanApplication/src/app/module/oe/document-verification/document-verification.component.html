@@ -18,31 +18,17 @@
         <tbody >
           <tr *ngFor="let a of CustomerList">
             <td><img style="border: 2px solid #00838F;" [src]="'data:image/png;base64,'+a.customerDocuments.customerProfilePhoto" height="75px" width="75px"></td>
-            <th scope="row">{{a.customerId}}</th>
+            <td scope="row">{{a.customerId}}</td>
             <td>{{a.customerName}}</td>
             <td>{{a.customerAadharno}}</td>
             <td>{{a.customerEmail}}</td>
             <td>{{a.customerMobileno}}</td>
             <td>
-              <button mat-fab extended style="background-color: #2ea300;" routerLink="../CustomerData/{{a.customerId}}">
-               
+              <button mat-fab extended style="background-color: #2ea300;" routerLink="../CustomerData/{{a.customerId}}">       
                 Verify
               </button>
               </td>
-
-
-            <!-- <td><img [src]="'data:image/png;base64,'+a.customerDocuments." height="75px" width="75px"></td>
-            <th scope="row">{{u.user_id}}</th>
-            <td>{{u.user_name}}</td>
-            <td>{{u.user_address}}</td>
-            <td><img [src]="'data:image/png;base64,'+u.user_profileImage" height="75px" width="75px"></td>
-            <td><img [src]="'data:image/png;base64,'+u.user_addharDoc" height="75px" width="75px"></td>
-            <td><img [src]="'data:image/png;base64,'+u.user_panDoc" height="75px" width="75px"></td>
-    
-            <td><button routerLink="/createUser/{{u.user_id}}"><i class="fa fa-pencil" aria-hidden="true"></i></button></td>
-            <td><button (click)="delete(u.user_id)"><i class="fa fa-trash" aria-hidden="true"></i></button></td> -->
-          </tr>
-         
+            </tr>
         </tbody>
       </table>
 </mat-card>

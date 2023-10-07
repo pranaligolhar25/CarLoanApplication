@@ -5,19 +5,24 @@ import { CustomerRoutingModule } from './customer-routing.module';
 import { OverviewComponent } from './overview/overview.component';
 import { HowToApplyComponent } from './how-to-apply/how-to-apply.component';
 import { ApplyLoanComponent } from './apply-loan/apply-loan.component';
-import { FeaturesBenifitsComponent } from './features-benifits/features-benifits.component';
+
 import { TrackStatusComponent } from './track-status/track-status.component';
+import { EmiCalculatorComponent } from './emi-calculator/emi-calculator.component';
+import { MaterialModule } from 'src/app/material/material/material.module';
 
 
 @NgModule({
   declarations: [
     OverviewComponent,
-    FeaturesBenifitsComponent,
-    TrackStatusComponent
+    
+   
+    TrackStatusComponent,
+         EmiCalculatorComponent
   ],
   imports: [
     CommonModule,
-    CustomerRoutingModule
+    CustomerRoutingModule,
+    MaterialModule
   ]
 })
 export class CustomerModule { }

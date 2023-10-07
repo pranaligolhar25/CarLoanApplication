@@ -1,9 +1,9 @@
+
 <div class="container-fluid">
     <h1 style="font-size: 30px; font-weight: 800; text-align: center;">Document Verifaction Process</h1>
 
     <mat-card class="custom-card">
 
-        
         <mat-card-content>
 
             <div *ngIf="condition; else elseBlock">
@@ -11,9 +11,9 @@
                 <div class="container">
                     <div *ngIf="imagecondition; else imageBlock">
                     <h4 style="font-weight: 900; font-size: 20px;">Documents</h4>
-                    <div class="form first">
-                    <div>
-                        <table class="table">
+                    <div class="form first" >
+                    <div >
+                        <table class="table" >
                             <thead>
                               <tr>
                                 <th scope="col">#</th>
@@ -123,7 +123,7 @@
                                 <td>{{customerCarQuotation.name}}</td>
                                 <td><button class="image" (click)="gotoimage(customerCarQuotation)"><img [src]="'data:image/png;base64,'+customerCarQuotation" height="75px" width="75px"></button></td>
                                 <td>  <section class="example-section">
-                                    <mat-checkbox class="example-margin" >Verify</mat-checkbox>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="CarQcheck">Verify</mat-checkbox>
                                      </section>
                                     </td>
                               </tr>
@@ -135,14 +135,17 @@
             Back
           </button>
 
-          <button mat-fab extended (click)="DocumentVerified()"  style="background-color: #2ea300; width: 150px; margin-top: 20px; margin-right: 20px;">
+          <button mat-fab extended (click)="sanctionLetter()" style="background-color: #2ea300; width: 150px; margin-top: 20px; margin-right: 20px;">
             <!-- <mat-icon>favorite</mat-icon> -->
-            Aprove
+            Accept
           </button>
-        <button mat-fab extended (click)="Reject()" color="warn" style="width: 150px;">
-            <!-- <mat-icon>favorite</mat-icon> -->
+
+          <button mat-fab extended (click)="Reject()" color="warn" style="width: 150px; margin-top: 20px; margin-right: 20px;">
+    
             Reject
           </button>
+          
+       
     </div>
                         
                         
@@ -162,8 +165,7 @@
                 </div>
               
 
-              </div>
-              
+              </div> 
               <ng-template #elseBlock>
                 <!-- Content to display when the condition is false -->
                 <div class="body">
@@ -176,7 +178,7 @@
                                     <div class="fields">
                                         <div class="input-field">
                                             <label> Name</label>
-                                            <input type="text" placeholder="Enter Your Name" formControlName="customerName">
+                                            <input type="text" [disabled]="isInputDisabled" placeholder="Enter Your Name" formControlName="customerName">
                                         </div>
     
     
@@ -233,7 +235,6 @@
                                         <input type="text" placeholder="Enter District" formControlName="districtName">
                                     </div>
     
-    
                                     <div class="input-field">
                                         <label>Land Mark</label>
                                         <input type="text" placeholder="Enter Land" formControlName="landMark">
@@ -278,9 +279,7 @@
                                     <label>District</label>
                                     <input type="text" placeholder="Enter District" formControlName="districtName">
                                 </div>
-    
-    
-    
+
                                 <div class="input-field">
                                     <label>Land Mark</label>
                                     <input type="text" placeholder="Enter Land Mark" formControlName="landMark">
@@ -291,23 +290,13 @@
                                     <label>State</label>
                                     <input type="text" placeholder="Enter State" formControlName="stateName">
                                 </div>
-    
-    
-    
-    
-    
-    
-    
+
                                 <div class="input-field">
                                     <label>Pin code</label>
                                     <input type="text" placeholder="Enter Pin Code" formControlName="pinCodeNumber">
                                 </div>
                             </div>
-    
-    
-    
-    
-    
+
                         </form>
                     </div>
                 </div>
@@ -340,21 +329,12 @@
                                             <input type="number" placeholder="Enter IFSC no" formControlName="ifscNumber">
                                         </div>
     
-    
-    
                                         <div class="input-field">
                                             <label>CIF Number</label>
                                             <input type="text" placeholder="Enter CIF No" formControlName="cardNumber">
                                         </div>
                                     </div>
-    
-    
                                 </div>
-    
-    
-                                
-    
-    
                             </div>
                         </form>
                         
@@ -362,18 +342,9 @@
                             <!-- <mat-icon>favorite</mat-icon> -->
                             Next
                           </button>
-                        
-               
                     </div>
                 </div>
               </ng-template>
-
-        
-
-          
-
-           
-
         </mat-card-content>
     </mat-card>
 </div>
