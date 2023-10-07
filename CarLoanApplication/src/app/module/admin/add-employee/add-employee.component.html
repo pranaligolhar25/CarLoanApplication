@@ -24,7 +24,7 @@
             
                                 <div class="input-field">
                                     <label>Email</label>
-                                    <input type="email" placeholder="Enter Your Email" formControlName="employeeEmail">
+                                    <input type="email" placeholder="Enter Your Email" formControlName="employeeEmail" required>
                                 </div>
             
                                 <div class="input-field">
@@ -35,9 +35,9 @@
                                 <div class="input-field">
                                     <label>Gender</label>
                                     <select name="status" formControlName="employeeGender">
-                                        <option >Male</option>
-                                        <option >Female</option>
-                                        <option >Other</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Other">Other</option>
                     
                                       </select>
                                 </div>
@@ -45,10 +45,10 @@
                                 <div class="input-field">
                                     <label>Role</label>
                                     <select name="status" formControlName="employeeRole">
-                                        <option value="volvo">relationship executive</option>
-                                        <option value="saab">operation executive</option>
-                                        <option value="saab">Credit manager</option>
-                                        <option value="saab">Account head</option>
+                                        <option value="relationship executive">relationship executive</option>
+                                        <option value="operation executive">operation executive</option>
+                                        <option value="Credit manager">Credit manager</option>
+                                        <option value="Account head">Account head</option>
                     
                                       </select>
                                 </div>

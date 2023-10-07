@@ -16,5 +16,9 @@ export class EmployeeService {
   getEmployee(){
     return this.http.get("http://localhost:9090/employee/get_all_employee");
   }
+  deleteEmployee(s:any){
+  
+    return this.http.delete("http://localhost:9090/employee/delete_employee/"+s.employeeId);
+  }
 
 }

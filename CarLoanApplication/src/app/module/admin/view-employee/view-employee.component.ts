@@ -14,4 +14,8 @@ ngOnInit(){
     this.emp=a;
   })
 }
+deleteEmployee(s:any){
+  this.es.deleteEmployee(s).subscribe();
+  window.location.reload();
+}
 }
