@@ -1,7 +1,7 @@
 /* Apply basic styles */
 body {
     font-family: Arial;
-    height: 440vh;
+    height: 500vh;
   }
 header {
     background-color: orange;
@@ -44,7 +44,7 @@ section {
   
     background-color: white; /* Set the background color */
     width: 50%;
-    height: 400px;
+    height: 450px;
     text-align: right; /* Center-align text horizontally */
     padding-top: 5%;
   }
