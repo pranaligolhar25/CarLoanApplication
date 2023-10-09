@@ -34,7 +34,7 @@ export class CheckCibilScoreComponent {
     this.enqry.applicationStatus="Cibil Checked";
     this.cs.updateEnquiry(this.enqry).subscribe((a:any)=>{
       console.warn(a)});
-      window.location.reload();
+
   }
   
   enquiryForm:FormGroup;

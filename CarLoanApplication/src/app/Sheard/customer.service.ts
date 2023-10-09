@@ -31,7 +31,12 @@ export class CustomerService {
   {
     return this.http.put("http://localhost:9090/customer/update_customer_status",customer);
   }
-
+  updateCustomerSanctionLetter(customerid:number,sanctionData:any)
+  {
+    console.warn(customerid);
+    console.warn(sanctionData);
+    return this.http.put("http://localhost:9090/customer/update_customer_SanctionDetails/"+customerid,sanctionData);
+  }
   deleteCustomer(id:number)
   {
     return this.http.delete("http://localhost:9090/customer/delete_customer/"+id);

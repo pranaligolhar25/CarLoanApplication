@@ -133,6 +133,7 @@ sanctionLetter()
   this.customer.applicationStatus="Loan Sanctioned";
   this.cs.updateCustomerStatus(this.customer).subscribe();
   window.location.reload();
+  // this.router.navigateByUrl("../");
 }
 
 Reject()

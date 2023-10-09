@@ -1,4 +1,148 @@
-<div class="container" style="overflow-x:auto;">
+
+<div *ngIf="condition; else elseBlock">
+
+  <div class="body">
+    <div class="container">
+
+        <form [formGroup]="profileFormGroup">
+            <h4 style="font-weight: 900; font-size: 20px;">PERSONAL DETAILS</h4>
+            
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label> Name</label>
+                            <input type="text" placeholder="Enter Your Name" formControlName="customerName">
+                        </div>
+
+
+
+                        <div class="input-field">
+                            <label>Email</label>
+                            <input type="email" placeholder="Enter Your Email"
+                                formControlName="customerEmail">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Aadhar Number</label>
+                            <input type="number" placeholder="Enter Your Aadhar Nnumber"
+                                formControlName="customerAadharno">
+                        </div>
+
+
+                        <div class="input-field">
+                            <label>Pan Number</label>
+                            <input type="number" placeholder="Enter Your Pan Nnumber"
+                                formControlName="customerPanno">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Mobile Number</label>
+                            <input type="number" placeholder="Enter Your Mobile NO"
+                                formControlName="customerMobileno">
+                        </div>
+
+                    </div>
+        </form>
+
+    </div>
+</div>
+
+<div class="body">
+  <div class="container">
+      <form [formGroup]="bankFormGroup" class="bank">
+          <h4 style="font-weight: 900; font-size: 20px;">Bank Details</h4>
+          <div class="form first">
+              <div class="details personal">
+
+                  <div class="fields">
+                      <div class="input-field">
+                          <label>Account No</label>
+                          <input type="number" placeholder="Enter Your Account no"
+                              formControlName="bankAccountNumber">
+                      </div>
+
+                      <div class="input-field">
+                          <label>Bank Name</label>
+                          <input type="text" placeholder="Enter Bank Name" formControlName="bankName">
+                      </div>
+
+                      <div class="input-field">
+                          <label>Brach Name</label>
+                          <input type="text" placeholder="Enter Branch" formControlName="branchName">
+                      </div>
+
+                      <div class="input-field">
+                          <label>IFSC Number</label>
+                          <input type="number" placeholder="Enter IFSC no" formControlName="ifscNumber">
+                      </div>
+
+                      <div class="input-field">
+                          <label>CIF Number</label>
+                          <input type="text" placeholder="Enter CIF No" formControlName="cardNumber">
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </form>
+      
+
+  </div>
+</div>
+
+<div class="body">
+  <div class="container">
+
+      <form [formGroup]="SanctionForm">
+          <h4 style="font-weight: 900; font-size: 20px;">Loan Sanction From</h4>
+          
+
+                  <div class="fields">
+
+                      <div class="input-field">
+                          <label>Tenure</label>
+                          <input type="number" placeholder="Enter Your Tenure"
+                              formControlName="tenure">
+                      </div>
+
+
+                      <div class="input-field">
+                          <label>Rate Of Interest</label>
+                          <input type="number" placeholder="Enter rate Of Interest"
+                              formControlName="rateOfInterest">
+                      </div>
+
+                      <div class="input-field">
+                          <label>customerTotalLoanRequired</label>
+                          <input type="number" placeholder="Enter customer Loan Required:"
+                              formControlName="customerTotalLoanRequired">
+                      </div>
+
+                      <div class="input-field">
+                        <label>Sanction Amount</label>
+                        <input type="number" placeholder="Enter Sanction Amount"
+                            formControlName="sanctionAmount">
+                    </div>
+                    <div class="input-field">
+                      <label>Offer Validity</label>
+                      <input type="text" placeholder="Enter validity"
+                          formControlName="offerValid">
+                  </div>
+
+                  </div>
+                  <button mat-fab extended color="warn" (click)="saveSanction()"  style="width: 150px; margin-top: 20px; margin-right: 20px;">
+                    <!-- <mat-icon>favorite</mat-icon> -->
+                    Submit
+                  </button>
+            
+      </form>
+   
+  </div>
+</div>
+
+</div>
+<ng-template #elseBlock>
+ 
+  <div class="container" style="overflow-x:auto;">
     <h1 style=" margin-bottom: 30px; font-size: 30px; font-weight: 800; text-align: center;"> Loan Application List</h1>
   
     <mat-card class="custom-card">
@@ -22,8 +166,8 @@
               <td>{{a.customerEmail}}</td>
               <td>{{a.customerMobileno}}</td>
               <td>
-                <button mat-fab extended color="warn" (click)="generatePdf(a)">       
-                  Generate PDF
+                <button mat-fab extended color="warn" (click)="generateSanctionLetter(a)">       
+                  Generate
                 </button>
                 </td>
               </tr>
@@ -31,6 +175,14 @@
         </table>
   </mat-card>
   </div>
+</ng-template>
+
+
+
+
+
+
+
 
 
   <!-- <button mat-fab extended color="warn" (click)="generatePdf()" >       
