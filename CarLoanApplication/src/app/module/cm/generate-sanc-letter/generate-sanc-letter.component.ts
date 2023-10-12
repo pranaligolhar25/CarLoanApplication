@@ -42,7 +42,7 @@ export class GenerateSancLetterComponent {
     agreementDate:[],
     customerTotalLoanRequired:[],
     sanctionAmount:[],
-   
+    monthlyEMI:[],
     offerValid:[]
   });
 
@@ -71,12 +71,40 @@ export class GenerateSancLetterComponent {
         this.profileFormGroup.patchValue(data);
         this.bankFormGroup.patchValue(data.customerBankDetails);
       }
-  
+      condition2:boolean=false;
+      
+      
+
+    
       saveSanction()
       {
-
+        this.condition2=true;
+          console.log(this.SanctionForm.value)
         this.cs.updateCustomerSanctionLetter(this.customerid,this.SanctionForm.value).subscribe();
-        window.location.reload();
+        // window.location.reload();
       }
+
+      calculateEMI(): number {
+        const principal = this.SanctionForm.value.sanctionAmount;
+        const rateOfInterest = this.SanctionForm.value.rateOfInterest / 12 / 100;
+        const tenureInMonths = this.SanctionForm.value.tenure;
     
-    }
+        const emi = (principal * rateOfInterest * Math.pow(1 + rateOfInterest, tenureInMonths)) /
+                    (Math.pow(1 + rateOfInterest, tenureInMonths) - 1);
+        
+          this.SanctionForm.value.monthlyEMI=emi       
+        return emi;
+      }
+
+      sendMail()
+      {
+        //call send mail api
+        alert("Mail Send");
+      }
+
+      }
+
+    
+    
+
+    

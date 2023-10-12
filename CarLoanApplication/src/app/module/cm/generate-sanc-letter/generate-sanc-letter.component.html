@@ -1,20 +1,68 @@
 
 <div *ngIf="condition; else elseBlock">
 
+
+
+<div *ngIf="condition2; else elseBlock">
+  <!-- Content to display when the condition is true -->
+  <div class="container">
+
+    <div  style=" padding-left: 10%; padding-right: 10%;">
+  
+  <div class="letter">
+    <div class="bank-info" style="margin-right: 5%;">
+        <h2>AutoCread Finance</h2>
+        <p>Address of the Bank</p>
+        <p>Phone: XXX-XXX-XXXX</p>
+        <p>Email: bank@example.com</p>
+    </div>
+  
+    <div class="customer-info">
+        <h3>Dear Customer,</h3>
+        
+        <p>We are pleased to inform you that your loan application has been approved. Below are the details:</p>
+        <ul style="margin-right: 10%; margin-left: 10%;">
+            <li>Sanction Id: {{this.SanctionForm.value.sanctionId}}</li>
+            <li>Required Amount: {{this.SanctionForm.value.customerTotalLoanRequired}}</li>
+            <li>Sanctioned Amount: {{this.SanctionForm.value.sanctionAmount}}</li>
+            <li>Interest Rate: {{this.SanctionForm.value.rateOfInterest}} %</li>
+            <li>Tenure: {{this.SanctionForm.value.tenure}} months</li>
+            <li>Mothly EMI: {{this.SanctionForm.value.monthlyEMI}} </li>
+            <!-- <li>Repayment Schedule: [Specify]</li> -->
+        </ul>
+    </div>
+  
+    <div class="terms">
+        <h4>Terms and Conditions:</h4>
+        <ol>
+            <li>Auto Loan: Loan will be available for purchase of vehicle</li>
+            <li>Processing Fees: The Bank shall charge a non-refundable processing fees at a certain % of the loan amount
+              plus GST, if applicable</li>
+            <li>Rate of Interest: Interest on New Car loan will be charged at floating rate (detailed ROI for specific case as
+              mentioned in the sanction letter) </li>
+        </ol>
+        <p>For any queries, please feel free to contact us.</p>
+    </div>
+  </div>
+  <button mat-fab extended color="warn" (click)="sendMail()" style="margin-top: 5%;">       
+    Send
+  </button>
+</div>
+</div>
+</div>
+<ng-template #elseBlock>
+ 
   <div class="body">
     <div class="container">
 
         <form [formGroup]="profileFormGroup">
             <h4 style="font-weight: 900; font-size: 20px;">PERSONAL DETAILS</h4>
             
-
                     <div class="fields">
                         <div class="input-field">
                             <label> Name</label>
                             <input type="text" placeholder="Enter Your Name" formControlName="customerName" >
                         </div>
-
-
 
                         <div class="input-field">
                             <label>Email</label>
@@ -94,7 +142,6 @@
 
       <form [formGroup]="SanctionForm">
           <h4 style="font-weight: 900; font-size: 20px;">Loan Sanction From</h4>
-          
 
                   <div class="fields">
 
@@ -104,7 +151,6 @@
                               formControlName="tenure">
                       </div>
 
-
                       <div class="input-field">
                           <label>Rate Of Interest</label>
                           <input type="number" placeholder="Enter rate Of Interest"
@@ -112,7 +158,7 @@
                       </div>
 
                       <div class="input-field">
-                          <label>customerTotalLoanRequired</label>
+                          <label>Required Loan Amount</label>
                           <input type="number" placeholder="Enter customer Loan Required:"
                               formControlName="customerTotalLoanRequired">
                       </div>
@@ -121,11 +167,19 @@
                         <label>Sanction Amount</label>
                         <input type="number" placeholder="Enter Sanction Amount"
                             formControlName="sanctionAmount">
+                          
                     </div>
+                    
                     <div class="input-field">
-                      <label>Offer Validity</label>
+                      <label>Agreement Date</label>
+                      <input type="text" placeholder="Enter Date"
+                          formControlName="agreementDate">
+                          
+                  </div>
+                    <div class="input-field">
+                      <label>Monthly EMI</label>
                       <input type="text" placeholder="Enter validity"
-                          formControlName="offerValid">
+                          formControlName="monthlyEMI" value="{{calculateEMI()}}">
                   </div>
 
                   </div>
@@ -138,6 +192,8 @@
    
   </div>
 </div>
+  <!-- Content to display when the condition is false -->
+</ng-template>
 
 </div>
 <ng-template #elseBlock>
