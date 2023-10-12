@@ -189,7 +189,19 @@ success(){
      this.es.updateEnquiry(this.enq).subscribe();
   
     }
-
+    copyLocalToPermanent() {
+    
+     
+        this.localaddform.patchValue({
+          areaName:this.permanentaddform.value.areaName,
+        cityName:this.permanentaddform.value.cityName,
+        districtName:this.permanentaddform.value.districtName,
+        landMark:this.permanentaddform.value.landMark,
+        stateName:this.permanentaddform.value.stateName,
+        pinCodeNumber:this.permanentaddform.value.pinCodeNumber
+        })
+   
+    }
 
 
 

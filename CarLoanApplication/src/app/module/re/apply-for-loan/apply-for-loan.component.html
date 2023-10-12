@@ -9,7 +9,7 @@
             <div class="body">
             <div class="container">
 
-                <form [formGroup]="profileFormGroup">
+                <form [formGroup]="profileFormGroup" class="fb d">
                     <h4>PERSONAL DETAILS</h4>
                     <div class="form first">
                         <div class="details personal">
@@ -71,6 +71,7 @@
       
         <div class="body">
             <div class="container">
+                <div class="fb">
                 <form [formGroup]="permanentaddform">
                     <div class="details ID">
                         <h4>Permanent Address</h4>
@@ -111,7 +112,7 @@
                                 <label>Pin code</label>
                                 <input type="text" placeholder="Enter Pin Code" formControlName="pinCodeNumber">
                             </div>
-                         
+                            <label>same as</label><input type="checkbox"  (change)="copyLocalToPermanent()">
                     </div>
                     
                     </div> 
@@ -175,6 +176,7 @@
                     </div>
                
                     </form>
+                </div>
             </div>
         </div>
 
@@ -184,7 +186,7 @@
       
         <div class="body">
             <div class="container">
-                <form [formGroup]="bankFormGroup" class="bank">
+                <form [formGroup]="bankFormGroup" class="bank fb">
                     <h4>Bank Details</h4>
                     <div class="form first">
                         <div class="details personal">
@@ -243,7 +245,7 @@
       
         <div class="body">
             <div class="container">
-                <form  class="Doccument">
+                <form  class="Doccument fb">
                     <h4>Document Details</h4>
                     <div class="form first">
                         <div class="details personal">
