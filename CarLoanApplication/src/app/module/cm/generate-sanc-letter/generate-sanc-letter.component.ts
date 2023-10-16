@@ -74,15 +74,20 @@ export class GenerateSancLetterComponent {
       condition2:boolean=false;
       
       
-
+      letter:any[];
     
       saveSanction()
       {
         this.condition2=true;
           console.log(this.SanctionForm.value)
+          
         this.cs.updateCustomerSanctionLetter(this.customerid,this.SanctionForm.value).subscribe();
+        this.cs.generatesactionletter(this.customerid).subscribe((cu:any[])=>{
+        this.letter=cu;
+        });
         // window.location.reload();
       }
+    
 
       calculateEMI(): number {
         const principal = this.SanctionForm.value.sanctionAmount;

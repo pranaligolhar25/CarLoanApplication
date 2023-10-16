@@ -7,7 +7,7 @@ import { DesbursmentComponent } from './desbursment/desbursment.component';
 import { GenerateLedgerComponent } from './generate-ledger/generate-ledger.component';
 import { ViewLedgerComponent } from './view-ledger/view-ledger.component';
 import { DefaulterListComponent } from './defaulter-list/defaulter-list.component';
-
+import { MaterialModule } from 'src/app/material/material/material.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,9 @@ import { DefaulterListComponent } from './defaulter-list/defaulter-list.componen
   ],
   imports: [
     CommonModule,
-    AhRoutingModule
+    AhRoutingModule, 
+    MaterialModule
+
   ]
 })
 export class AhModule { }

@@ -41,4 +41,11 @@ export class CustomerService {
   {
     return this.http.delete("http://localhost:9090/customer/delete_customer/"+id);
   }
+  generatesactionletter(customer:any){
+    alert(customer)
+    return this.http.get("http://localhost:9090/customer/generate_pdf/"+customer);
+  }
+  sendSanctionLetterMail(customer:any){
+    return this.http.get("http://localhost:9090/customer/send_sanction_letter/"+customer.customerId);
+  }
 }

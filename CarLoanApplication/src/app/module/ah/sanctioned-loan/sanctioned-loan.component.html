@@ -1,69 +1,42 @@
 
-<div class="container">
 
-    <h2>Sanctioned Loans List</h2>
+<mat-card class="custom-card">
+  <h2>sanctioned-loan</h2>
+<div style="overflow-x:auto;">
+  <table class="table" align="center"  >
+      <thead >
 
-    <table class="table">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </table>
-      
-      <table class="table">
-        <thead class="thead-light">
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </table>
+        <tr>
+          <th scope="col">CustomerId</th>
+          <th scope="col">Customer Name</th>
+          <th scope="col">Tenure</th>
+          <th scope="col">Rate Of Interest</th>
+          <th scope="col">Angreeement Date</th>
+          <th scope="col">Sanction Amount</th>
+          <th scope="col">send</th>
+        </tr>
+      </thead>
+    <tbody >
+
+      <tr *ngFor="let a of letter">
+        <th>{{a.customerId}}</th>
+        <th>{{a.customerName}}</th>
+        <td>{{a.sanctionDetails.tenure}}</td>
+        <td>{{a.sanctionDetails.rateOfInterest}}</td>
+        <td>{{a.sanctionDetails.agreementDate}}</td>
+        <td>{{a.sanctionDetails.sanctionAmount}}</td>
     
+        
+       
+      
+    <td>
+      <button (click)="sendmail(a)"><i class="fa fa-paper-plane" aria-hidden="true"></i>send mail</button>
+  </td>
+
+
+
+</table>
 </div>
+
+
 
