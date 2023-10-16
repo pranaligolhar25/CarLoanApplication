@@ -1,43 +1,42 @@
 
 
 <mat-card class="custom-card">
-    <h2>Desbursment</h2>
-  <div style="overflow-x:auto;">
-    <table class="table" align="center"  >
-        <thead >
-  
-          <tr>
-            <th scope="col">CustomerId</th>
-            <th scope="col">Customer Name</th>
-            <th scope="col">Tenure</th>
-            <th scope="col">Rate Of Interest</th>
-            <th scope="col">Angreeement Date</th>
-            <th scope="col">Sanction Amount</th>
-            <th scope="col">desbursment</th>
-          </tr>
-        </thead>
-      <tbody >
-  
-        <tr *ngFor="let a of letter">
-          <th></th>
-          <th></th>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-      
-          
-         
+  <h2>disbursment</h2>
+<div style="overflow-x:auto;">
+  <table class="table" align="center"  >
+      <thead >
+
+        <tr>
+          <th scope="col">CustomerId</th>
+          <th scope="col">Customer Name</th>
+          <th scope="col">Tenure</th>
+          <th scope="col">Rate Of Interest</th>
+          <th scope="col">Angreeement Date</th>
+          <th scope="col">Sanction Amount</th>
+          <th scope="col">Disbursment</th>
+        </tr>
+      </thead>
+    <tbody >
+
+      <tr *ngFor="let a of letter">
+        <th>{{a.customerId}}</th>
+        <th>{{a.customerName}}</th>
+        <td>{{a.sanctionDetails.tenure}}</td>
+        <td>{{a.sanctionDetails.rateOfInterest}}</td>
+        <td>{{a.sanctionDetails.agreementDate}}</td>
+        <td>{{a.sanctionDetails.sanctionAmount}}</td>
+    
         
-      <td>
-        <button ><i class="fa fa-paper-plane" aria-hidden="true"></i>send mail</button>
-    </td>
-  
-  
-  
-  </table>
-  </div>
-  
-  
-  
-  
+       
+      
+    <td>
+      <button (click)="sendmail(a)">disbursment</button>
+  </td>
+
+
+
+</table>
+</div>
+
+
+
