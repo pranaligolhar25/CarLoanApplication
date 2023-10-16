@@ -36,14 +36,19 @@ export class UserOption {
              ah:[
               {label:'Sanctioned Loan' , path :'sanction_loan'},
                 {label:'Desbursement' , path :'disbursement'},
-                {label:'Generate Ledger' , path :'generate_ledger'},
+                // {label:'Generate Ledger' , path :'generate_ledger'},
                 {label:'View Ledger' , path :'view_ledger'},
-                {label:'Defaulter List' , path :'defaulter_list'},
+                // {label:'Defaulter List' , path :'defaulter_list'},
               
              ],
              admin:[
               {label:'Add Employee' , path :'add_employee'},
               {label:'View Employee' , path :'view_employee'},
+            
+             ],
+             telecom:[
+              {label:'View Loan Application' , path :'view_Appli'},
+              {label:'Defaulter List' , path :'defaulter_list'},
             
              ]
         }

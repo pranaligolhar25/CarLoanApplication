@@ -79,8 +79,7 @@ export class GenerateSancLetterComponent {
       saveSanction()
       {
         this.condition2=true;
-          console.log(this.SanctionForm.value)
-          
+        console.log(this.SanctionForm.value)  
         this.cs.updateCustomerSanctionLetter(this.customerid,this.SanctionForm.value).subscribe();
         this.cs.generatesactionletter(this.customerid).subscribe((cu:any[])=>{
         this.letter=cu;
@@ -93,11 +92,9 @@ export class GenerateSancLetterComponent {
         const principal = this.SanctionForm.value.sanctionAmount;
         const rateOfInterest = this.SanctionForm.value.rateOfInterest / 12 / 100;
         const tenureInMonths = this.SanctionForm.value.tenure;
-    
         const emi = (principal * rateOfInterest * Math.pow(1 + rateOfInterest, tenureInMonths)) /
                     (Math.pow(1 + rateOfInterest, tenureInMonths) - 1);
-        
-          this.SanctionForm.value.monthlyEMI=emi       
+        this.SanctionForm.value.monthlyEMI=emi       
         return emi;
       }
 

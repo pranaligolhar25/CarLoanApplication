@@ -76,6 +76,13 @@ export class LoginComponent implements OnInit{
       this.router.navigateByUrl('/application/admin')
       console.log("adminlogin");
     }
+    else if(un=="telecom" && ps=="telecom@123")
+    {
+      sessionStorage.setItem('type','telecom')
+      alert("Hello admin");
+      this.router.navigateByUrl('/application/telecom')
+      console.log("telecomlogin");
+    }
     
     else
     {

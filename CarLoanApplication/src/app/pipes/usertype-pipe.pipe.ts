@@ -31,6 +31,10 @@ export class UsertypePipePipe implements PipeTransform {
     {
       return "Admin...!";
     }
+    else if(value=='telecom')
+    {
+      return "telecom..!";
+    }
 
     return null;
   }

@@ -56,7 +56,8 @@ const routes: Routes = [
       {path:'ah' , loadChildren:()=>import('src/app/module/ah/ah.module').then(m=>m.AhModule)},
       {path:'admin' , loadChildren:()=>import('src/app/module/admin/admin.module').then(m=>m.AdminModule)},
       {path:'customer' , loadChildren:()=>import('src/app/module/customer/customer.module').then(m=>m.CustomerModule)},
-      
+      {path:'telecom' , loadChildren:()=>import('src/app/module/telecom/telecom.module').then(m=>m.TelecomModule)},
+       
 
     ]
   }
